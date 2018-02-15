@@ -1,0 +1,76 @@
+﻿<section class="content-header">
+    <h1>
+        Detalle Cliente <b>{{item.Name}}</b>
+        <small></small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#/Home"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#/Customers">Listado Clientes</a></li>
+        <li class="active">{{pageCurrent}}</li>
+    </ol>
+</section>
+<section class="content">
+    <form role="form" name="myForm">
+        <div class="box box-info">
+            <div class="box-body">
+                <div class="row">
+                    <!-- left column -->
+                    <div class="col-md-6">
+                        <div class="form-group" ng-class="(myForm.FirtsName.$dirty || !isValid) && !myForm.FirtsName.$valid?'has-error' : ''">
+                            <label>Nombres</label>
+                            <input type="text" class="form-control custom-control" name="FirtsName" placeholder="Nombres" ng-model="item.FirtsName" required>
+                        </div>
+                        <div class="form-group" ng-class="(myForm.TypeDocument.$dirty || !isValid) && !myForm.TypeDocument.$valid?'has-error' : ''">
+                            <label>Tipo Documento</label>
+                            <select class="form-control select2 custom-control" style="width: 100%;" id="TypeDocument" name="TypeDocument" ng-model="item.TypeDocument" required>
+                                <option value="" selected>Seleccione uno</option>
+                                <option ng-repeat="data in items" ng-selected="item.TypeDocument==data.Value" ng-value="data.Value">{{data.Key}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <!-- text input -->
+                        <div class="form-group" ng-class="(myForm.LastName.$dirty || !isValid) && !myForm.LastName.$valid?'has-error' : ''">
+                            <label>Apellidos</label>
+                            <input type="text" class="form-control custom-control" name="LastName" placeholder="Apellidos" ng-model="item.LastName" required>
+                        </div>
+                        <div class="form-group" ng-class="(myForm.Document.$dirty || !isValid) && !myForm.Document.$valid?'has-error' : ''">
+                            <label>Documento</label>
+                            <input type="text" class="form-control custom-control" name="Document" placeholder="Documento" ng-model="item.Document" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group" ng-class="(myForm.Email.$dirty || !isValid) && !myForm.Email.$valid?'has-error' : ''">
+                            <label>Email</label>
+                            <input type="text" class="form-control custom-control" name="Email" placeholder="Email" ng-model="item.Email">
+                        </div>
+                        <div class="form-group">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" class="minimal" name="in_active" ng-true-value="true" ng-false-value="false" ng-checked="item.Status===true" ng-model="item.Status">
+                                    Estado
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group" ng-class="(myForm.Phone.$dirty || !isValid) && !myForm.Phone.$valid?'has-error' : ''">
+                            <label>Telefono</label>
+                            <input type="text" class="form-control custom-control" name="Phone" placeholder="Telefono" ng-model="item.Phone">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- checkbox -->
+                    <div class="form-group">
+                        <div class="col-sm-offset-11">
+                            <button type="submit" class="btn btn-danger" ng-click="Save()">Guardar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</section>

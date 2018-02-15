@@ -1,0 +1,106 @@
+﻿<section class="content-header">
+    <h1>
+        Detalle Opcion <b>{{item.ds_menu}}</b>
+        <small></small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#/Home"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#/Menus">Listado Opciones</a></li>
+        <li class="active">{{pageCurrent}}</li>
+    </ol>
+</section>
+<section class="content">
+    <form role="form" name="myForm">
+        <div class="box box-info">
+            <div class="box-body">
+                <div class="row">
+                    <!-- left column -->
+                    <div class="col-md-6">
+                        <!-- text input -->
+                        <div class="form-group" ng-class="(myForm.Name.$dirty || !isValid) && !myForm.Name.$valid?'has-error' : ''">
+                            <label>Opcion</label>
+                            <input type="text" class="form-control custom-control" name="Name" placeholder="Opcion" ng-model="item.Name" required>
+                        </div>
+                        <div class="form-group" ng-class="(myForm.Page.$dirty || !isValid) && !myForm.Page.$valid?'has-error' : ''">
+                            <label>Action</label>
+                            <input type="text" class="form-control custom-control" name="Page" placeholder="Page" ng-model="item.Page" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group" ng-class="(myForm.Vertical.$dirty || !isValid) && !myForm.Vertical.$valid?'has-error' : ''">
+                                    <label>Vertical</label>
+                                    <input type="text" class="form-control custom-control" name="Vertical" placeholder="" ng-model="item.Vertical" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group" ng-class="(myForm.Horizontal.$dirty || !isValid) && !myForm.Horizontal.$valid?'has-error' : ''">
+                                    <label>Horizontal</label>
+                                    <input type="text" class="form-control custom-control" name="Horizontal" placeholder="" ng-model="item.Horizontal" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Icono</label>
+                                    <input type="text" class="form-control custom-control" name="Icon" placeholder="" ng-model="item.Icon">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <!-- select -->
+                                <div class="form-group" ng-class="(myForm.Parent.$dirty || !isValid) && !myForm.Parent.$valid?'has-error' : ''">
+                                    <label>Padre</label>
+                                    <select class="form-control select2 custom-control" style="width: 100%;" id="Parent" name="Parent" ng-model="item.Parent" required>
+                                        <option value="">Seleccione uno</option>
+                                        <option value="-1" selected>Ninguno</option>
+                                        <option ng-repeat="data in itemsParent"  value="{{data.Id}}" >{{data.Name}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- left column -->
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <!-- checkbox -->
+                        <div class="form-group">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" class="minimal" name="Status" ng-true-value="true" ng-false-value="false" ng-checked="item.Status===true" ng-model="item.Status">
+                                    Estado
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" class="minimal" name="IsParent" ng-true-value="true" ng-false-value="false" ng-checked="item.IsParent===true" ng-model="item.IsParent">
+                                    Convertir Menu Padre
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" class="minimal" name="IsParentMenu" ng-true-value="true" ng-false-value="false" ng-checked="item.IsParentMenu===true" ng-model="item.IsParentMenu">
+                                    Convertir Menu Visible
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" class="minimal" name="IsAutorization" ng-true-value="true" ng-false-value="false" ng-checked="item.IsAutorization===true" ng-model="item.IsAutorization">
+                                    Requiere Autorizacion
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-11">
+                                <button type="submit" class="btn btn-danger" ng-click="Save(item.Id)">Guardar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</section>

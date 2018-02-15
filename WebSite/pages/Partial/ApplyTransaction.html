@@ -1,0 +1,134 @@
+﻿<section class="content-header">
+    <h1>
+        <small></small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#/Home"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">{{pageCurrent}}</li>
+    </ol>
+</section>
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box box-danger">
+                <div class="box-header">
+                    <div class="box-tools">
+                        <div class="input-group input-group-sm" style="width: 350px;">
+                            <input type="text" name="search" ng-model="Filter" class="form-control pull-right" placeholder="Search">
+                            <div class="input-group-btn">
+                                <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <h3>{{items.Year}} - {{items.Name}}  <span class="fa fa-bar-chart-o"></span></h3>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label>Año</label>
+                                                <select class="form-control select2 custom-control" style="width: 80%;" id="Year" name="Year" ng-model="Year" ng-options="data.Value as data.Key for data in years" required>
+                                                    <option value="" selected>Seleccione uno</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label>Mes</label>
+                                                <select class="form-control select2 custom-control" style="width: 80%;" id="Month" name="Month" ng-model="Month"  ng-options="data.Value as data.Key for data in months" required>
+                                                    <option value="" selected>Seleccione uno</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <button type="button" ng-click="List()" class="btn btn-danger">Buscar</button>
+                                                <button type="button" ng-if="!items.Islock" ng-click="Lock()" class="btn btn-danger">Cerrar</button>
+                                                <button type="button" ng-if="items.Islock" ng-click="UnLock()" class="btn btn-success">Abrir</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th colspan="3">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <h3 class="text-red">Ingresos: {{items.TotalIncome | currency}}</h3>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <h3 class="text-blue">Gastos Pend.: {{items.SubTotal | currency}}</h3>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <h3 class="text-warning">Pagados: {{items.TotalExpenses | currency}}</h3>
+                                        </div>
+                                    </div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-if="items.BalanceExpenses.length===0">
+                                <td colspan="20">No hay Registros</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <ul>
+                                        <li style="list-style: none;
+                                                  float:left;
+                                                  display:inline;" ng-repeat="item in items.BalanceExpenses| filter:Filter | orderBy : !item.IsPayment">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="box box-solid">
+                                                        <div class="box-header with-border" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()">
+                                                            <b class="box-title"> {{item.Name}}</b>
+                                                            <a ng-click="Delete(item)" class="fa fa-trash" ng-show="hoverEdit" href="">
+                                                                <span class="animate-show">
+                                                                </span>
+                                                            </a>
+                                                        </div>
+                                                        <!-- /.box-header -->
+                                                        <div class="box-body">
+                                                            <blockquote>
+                                                                <p class="text-blue">{{item.Description}}</p>
+                                                                <small>Pagar <cite title="Source Title">{{item.Value | currency}}</cite></small>
+                                                                <small ng-if="item.Expenses.Account!=''">Cuenta PSE:  <cite title="Source Title"><b>{{item.Expenses.Account}}</b></cite></small>
+                                                                <small><b>Forma de Pago:</b></small>
+                                                                <select class="form-control select2 custom-control" style="width: 100%;" id="TypePayment" name="TypePayment"
+                                                                        ng-model="item.TypePayment"
+                                                                        ng-options="data.Value as data.Key for data in itemsType"><option value="">Seleccione uno</option></select>
+                                                                <input type="text" class="form-control custom-control" id="{{item.Id}}" value="{{item.Value}}" ng-model="item.Value" />
+                                                            </blockquote>
+                                                            <div class="btn-group">
+                                                                <button type="button" ng-if="!item.IsPayment" ng-click="Apply(item)" class="btn btn-danger">Pagar</button>
+                                                                <button type="button" ng-if="item.IsPayment" ng-click="Rejected(item)" class="btn btn-success">Revertir</button>
+                                                            </div>
+                                                        </div>
+                                                        <!-- /.box-body -->
+                                                    </div>
+                                                    <!-- /.box -->
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>
+<!-- /.content -->

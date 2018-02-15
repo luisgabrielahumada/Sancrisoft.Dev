@@ -1,0 +1,53 @@
+﻿<div class="register-box">
+    <div class="register-logo">
+        <a href="#/Login"><b></b></a>
+    </div>
+    <div class="register-box-body">
+        <p class="login-box-msg">Registrar un nuevo usuario.</p>
+        <form name="myForm">
+            <div class="form-group has-feedback" ng-class="(myForm.FirstName.$dirty || !isValid) && !myForm.FirstName.$valid?'has-error' : ''">
+                <input type="text" class="form-control   input-lg" id="FirstName" name="FirstName" ng-model="UserRegister.FirstName" placeholder="Nombres" required>
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback" ng-class="(myForm.LastName.$dirty || !isValid) && !myForm.LastName.$valid?'has-error' : ''">
+                <input type="text" class="form-control   input-lg" id="LastName" name="LastName" ng-model="UserRegister.LastName" placeholder="Apellidos" required>
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback" ng-class="(myForm.Email.$dirty || !isValid) && !myForm.Email.$valid?'has-error' : ''">
+                <input type="email" class="form-control   input-lg" id="Email" name="Email" ng-model="UserRegister.Email" placeholder="Email" required>
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback" ng-class="(myForm.UserName.$dirty || !isValid) && !myForm.UserName.$valid?'has-error' : ''">
+                <input type="text" class="form-control   input-lg" id="UserName" name="UserName" ng-model="UserRegister.UserName" placeholder="UserName" required>
+                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback" ng-class="(myForm.NewPassword.$dirty || !isValid) && !myForm.NewPassword.$valid?'has-error' : ''">
+                <input type="password" class="form-control   input-lg" id="NewPassword" name="NewPassword" ng-model="UserRegister.NewPassword" placeholder="Password" required>
+                <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
+            </div>
+            <div class="row">
+                <!-- /.col -->
+                <div class="col-xs-8">
+                </div>
+                <div class="col-xs-4">
+                    <button type="submit" class="btn btn-primary btn-block btn-flat   input-lg" ng-click="SignUp()">Registro</button>
+                </div>
+                <!-- /.col -->
+            </div>
+        </form>
+        <!--<div class="social-auth-links text-center">
+            <p>- OR -</p>
+            <a href="#" class="btn btn-block btn-social btn-facebook btn-flat">
+                <i class="fa fa-facebook"></i> Sign up using
+                Facebook
+            </a>
+            <a href="#" class="btn btn-block btn-social btn-google btn-flat">
+                <i class="fa fa-google-plus"></i> Sign up using
+                Google+
+            </a>
+        </div>-->
+        <a href="#/Login" class="text-center">Login</a><br />
+        <a href="#/RecoveryPassword">Recordar Contraseña</a>
+        <!-- /.form-box -->
+    </div>
+</div>

@@ -1,0 +1,16 @@
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Model\Sancrisoft.Entity.Models\bin\Release\Sancrisoft.Entity.Models.dll.config
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Model\Sancrisoft.Entity.Models\bin\Release\Sancrisoft.Entity.Models.dll
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Model\Sancrisoft.Entity.Models\bin\Release\Sancrisoft.Entity.Models.pdb
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Model\Sancrisoft.Entity.Models\bin\Release\Arquitectura.Entity.Model.dll
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Model\Sancrisoft.Entity.Models\bin\Release\EntityFramework.dll
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Model\Sancrisoft.Entity.Models\bin\Release\EntityFramework.SqlServer.dll
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Model\Sancrisoft.Entity.Models\bin\Release\Process.Entity.Models.dll
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Model\Sancrisoft.Entity.Models\bin\Release\Arquirectura.Helper.Core.dll
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Model\Sancrisoft.Entity.Models\bin\Release\Configuration.Entity.Models.dll
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Model\Sancrisoft.Entity.Models\bin\Release\Process.Entity.Models.pdb
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Model\Sancrisoft.Entity.Models\bin\Release\EntityFramework.xml
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Model\Sancrisoft.Entity.Models\bin\Release\EntityFramework.SqlServer.xml
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Model\Sancrisoft.Entity.Models\bin\Release\Configuration.Entity.Models.pdb
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Model\Sancrisoft.Entity.Models\obj\Release\Sancrisoft.Entity.Models.csprojResolveAssemblyReference.cache
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Model\Sancrisoft.Entity.Models\obj\Release\Sancrisoft.Entity.Models.dll
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Model\Sancrisoft.Entity.Models\obj\Release\Sancrisoft.Entity.Models.pdb

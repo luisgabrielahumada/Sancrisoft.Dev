@@ -1,0 +1,78 @@
+﻿<section class="content-header">
+    <h1>
+        Detalle Servidor <b>{{item.ds_host}}</b>
+        <small></small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#/Home"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#/Smtp">Listado Servidores Smtp</a></li>
+        <li class="active">{{pageCurrent}}</li>
+    </ol>
+</section>
+<section class="content">
+    <form role="form" name="myForm">
+        <div class="box box-info">
+            <div class="box-body">
+                <div class="row">
+                    <!-- left column -->
+                    <div class="col-md-6">
+                        <!-- text input -->
+                        <div class="form-group" ng-class="(myForm.ds_host.$dirty || !isValid) && !myForm.ds_host.$valid?'has-error' : ''">
+                            <label>Host</label>
+                            <input type="text" class="form-control" name="ds_host" placeholder="Host" ng-model="item.ds_host" required>
+                        </div>
+                        <div class="form-group" ng-class="(myForm.ds_user_email.$dirty || !isValid) && !myForm.ds_user_email.$valid?'has-error' : ''">
+                            <label>Usuario</label>
+                            <input type="text" class="form-control" name="ds_user_email" placeholder="Usuario" ng-model="item.ds_user_email" required>
+                        </div>
+                        <div class="form-group" ng-class="(myForm.ds_password_email.$dirty || !isValid) && !myForm.ds_password_email.$valid?'has-error' : ''">
+                            <label>Password</label>
+                            <input type="password" class="form-control" name="ds_password_email" placeholder="Usuario" ng-model="item.ds_password_email" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group" ng-class="(myForm.am_port.$dirty || !isValid) && !myForm.am_port.$valid?'has-error' : ''">
+                                    <label>Puerto</label>
+                                    <input type="text" class="form-control" name="am_port" placeholder="" ng-model="item.am_port" required>
+                                </div>
+                                <div class="form-group">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" class="minimal" name="in_active" ng-true-value="true" ng-false-value="false" ng-checked="item.in_active===true" ng-model="item.in_active">
+                                            Estado
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" class="minimal" name="in_ssl" ng-true-value="true" ng-false-value="false" ng-checked="item.in_ssl===true" ng-model="item.in_ssl">
+                                            SSL
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" class="minimal" name="in_html" ng-true-value="true" ng-false-value="false" ng-checked="item.in_html===true" ng-model="item.in_html">
+                                            Body Html
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- left column -->
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- checkbox -->
+                        <div class="form-group">
+                            <div class="col-sm-offset-11">
+                                <button type="submit" class="btn btn-danger" ng-click="Save()">Guardar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</section>

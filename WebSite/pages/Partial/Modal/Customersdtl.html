@@ -1,0 +1,64 @@
+﻿<div class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" ng-click="close()" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Registro de Cliente</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form">
+                    <!-- left column -->
+                    <div class="col-md-12">
+                        <div class="form-group" ng-class="(myForm.FirtsName.$dirty || !isValid) && !myForm.FirtsName.$valid?'has-error' : ''">
+                            <label>Nombres</label>
+                            <input type="text" class="form-control custom-control" name="FirtsName" placeholder="Nombres" ng-model="item.FirtsName" required>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group" ng-class="(myForm.TypeDocument.$dirty || !isValid) && !myForm.TypeDocument.$valid?'has-error' : ''">
+                            <label>Tipo Documento</label>
+                            <select class="form-control select2 custom-control" style="width: 100%;" id="TypeDocument" name="TypeDocument" ng-model="item.TypeDocument" ng-options="data.Value as data.Key for data in rows" required>
+                                <option value="" selected>Seleccione uno</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <!-- text input -->
+                        <div class="form-group" ng-class="(myForm.LastName.$dirty || !isValid) && !myForm.LastName.$valid?'has-error' : ''">
+                            <label>Apellidos</label>
+                            <input type="text" class="form-control custom-control" name="LastName" placeholder="Apellidos" ng-model="item.LastName" required>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group" ng-class="(myForm.Document.$dirty || !isValid) && !myForm.Document.$valid?'has-error' : ''">
+                            <label>Documento</label>
+                            <input type="text" class="form-control custom-control" name="Document" placeholder="Documento" ng-model="item.Document" required>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group" ng-class="(myForm.Email.$dirty || !isValid) && !myForm.Email.$valid?'has-error' : ''">
+                            <label>Email</label>
+                            <input type="text" class="form-control custom-control" name="Email" placeholder="Email" ng-model="item.Email">
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group" ng-class="(myForm.Phone.$dirty || !isValid) && !myForm.Phone.$valid?'has-error' : ''">
+                            <label>Telefono</label>
+                            <input type="text" class="form-control custom-control" name="Phone" placeholder="Telefono" ng-model="item.Phone">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div class="pull-right">
+                    <button type="button" class="btn btn-danger" ng-click="Save()">Guardar</button>
+                </div>
+
+                <div class="pull-left">
+                    <button type="button" ng-click="Close()" class="btn btn-primary pull-left" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+e

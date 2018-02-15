@@ -1,0 +1,14 @@
+﻿{
+  "language": {
+      "new": "Nuevo",
+      "home": "Inicio",
+      "cities": "Listado de Ciudades",
+      "id": "ID",
+      "city": "Ciudad",
+      "country": "Pais",
+      "status": "Estado",
+      "notrecords": "No hay Registros",
+      "active": "Activo",
+      "inactive": "Inactivo"
+  }
+}

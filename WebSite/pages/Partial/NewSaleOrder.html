@@ -1,0 +1,221 @@
+﻿<section class="content-header">
+    <h1>
+        Orden: <b>{{data.Number}}</b>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#/Home"><i class="fa fa-dashboard"></i> Orden de Venta</a></li>
+        <li><a href="#/SaleOrders">Listado Ordenes</a></li>
+        <li class="active">{{pageCurrent}}</li>
+    </ol>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="alert alert-info" role="alert">
+                <h4>
+                    $ Pendiente:
+                    {{data.PricePending|currency}}
+                    <input type="hidden" class="form-control" name="SaleOrder_Id" ng-model="data.SaleOrder_Id">
+                </h4>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="alert alert-error" role="alert">
+                <h4>
+                    $ Total:
+                    {{data.PriceTotal|currency}}
+                </h4>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <button type="button" class="btn btn-success" ng-click="Get()"><i class="fa fa-refresh"></i>Actualizar</button>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group">
+                <button type="button" class="btn btn-success" ng-click="NewOrder()"><i class="fa fa-plus"></i> Nueva Orden</button>
+            </div>
+        </div>
+        <div class="col-md-2" ng-hide="data.StatusTransaction==3 || data.StatusTransaction==4">
+            <div class="form-group">
+                <button type="button" class="btn btn-warning" ng-click="Save()"><i class="fa fa-clock-o"></i> Guardar</button>
+            </div>
+        </div>
+        <div class="col-md-1">
+            <div class="form-group" ng-if="data.StatusTransaction!=3  && data.StatusTransaction!=4 && data.StatusTransaction!=0 && data.PriceTotal!=0">
+                <button type="button" class="btn btn-info" ng-click="Payment()"><i class="fa fa-clock-o"></i> Pagar</button>
+            </div>
+        </div>
+        <div class="col-md-1">
+            <div class="form-group" ng-if="data.StatusTransaction!=3  && data.StatusTransaction!=4 && data.StatusTransaction!=0 && data.PriceTotal!=0">
+                <button type="button" class="btn btn-warning" ng-click="LisPayment()"><i class="fa fa-list"></i> Ver Pagos</button>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="content">
+    <div class="box box-primary">
+        <!-- /.box-header -->
+        <div class="box-body">
+            <div class="row">
+                <div class="col-md-2">
+                    <label>Estado Orden</label>
+                    <select class="form-control select2 custom-control" style="width: 100%;" id="StatusTransaction" name="StatusTransaction" ng-options="items.Id as items.Name for items in transactionstatus" ng-model="data.StatusTransaction">
+                        <option value="">Estado de la Transaccion</option>
+                        <option ng-repeat="i in transactionstatus" ng-selected="data.StatusTransaction==i.Value" ng-value="i.Value">{{i.Key}}</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label>Tipo Orden</label>
+                        <select class="form-control select2 custom-control" style="width: 100%;" id="StatusOrders" name="StatusOrders" ng-options="items.Value as items.Key for items in rowstatus" ng-model="data.StatusOrders">
+                            <option value="" selected>Seleccione uno</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label>Fecha</label>
+                        <input type="text" datepicker datetime="yyyy-MM-dd" class="form-control custom-control" name="Transaction" ng-model="data.Transaction" value="{{ data.Transaction | date:'yyyy-MM-dd' }}">
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label>Descuento</label>
+                        <input type="text" numeric-only class="form-control custom-control" name="Discount" placeholder="Descuento" ng-model="data.Discount">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Observaciones</label>
+                        <input type="text" class="form-control custom-control" name="Description" placeholder="Documento" ng-model="data.Description">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label>Tipo Documento</label>
+                        <div class="input-group margin">
+                            <select class="form-control select2 custom-control" style="width: 100%;" id="TypeDocument" name="TypeDocument" ng-model="TypeDocument" required>
+                                <option value="" selected>Seleccione uno</option>
+                                <option ng-repeat="data in rows" ng-selected="TypeDocument==data.Value" ng-value="data.Value">{{data.Key}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Documento</label>
+                        <div class="input-group margin" style="z-index:0">
+                            <input type="text" class="form-control custom-control" name="Document" placeholder="Documento" ng-model="Document" required>
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-danger btn-flat" ng-click="SearchCustomer()"><i class="fa fa-clock-o"></i> Buscar</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>Nombres</label>
+                        <div class="input-group margin" style="z-index:0">
+                            <input type="text" class="form-control custom-control" name="FirtsName" readonly placeholder="Nombres" ng-model="customer.FirtsName" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>Apellidos</label>
+                        <div class="input-group margin">
+                            <input type="text" class="form-control custom-control" name="FirtsName" readonly placeholder="Apellidos" ng-model="customer.LastName" required>
+                            <input type="hidden" class="form-control" name="Customer_Id" ng-model="customer.Id">
+                            <span class="input-group-btn" ng-hide="data.StatusTransaction==3 || data.StatusTransaction==4">
+                                <button type="button" class="btn btn-default pull-right" ng-click="NewOrEdit(0)"><i class="fa fa-plus"></i></button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" ng-hide="data.StatusTransaction==3 || data.StatusTransaction==4">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Producto</label>
+                        <div class="input-group margin">
+                            <input type="text" class="form-control custom-control" name="Code" style="text-transform: uppercase" ng-blur="SearchProductCode()" placeholder="Codigo" ng-model="Code">
+                            <input type="hidden" class="form-control" name="Product_Id" ng-model="Product_Id">
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-success btn-flat" ng-click="SearchProduct()"><i class="fa fa-clock-o"></i> Buscar</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>Precio Unidad</label>
+                        <div class="input-group margin" style="z-index:0">
+                            <input type="text" numeric-only class="form-control custom-control" name="Rate" value="{{Rate | currency}}" placeholder="Rate" ng-model="Rate">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>Cantidad</label>
+                        <div class="input-group margin">
+                            <input type="text" numeric-only class="form-control custom-control" name="Unit" value="{{Unit | currency}}" placeholder="Cantidad" ng-model="Unit">
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-warning" ng-click="Add()"><i class="fa fa-plus"></i> Add</button>|
+                                <button type="button" class="btn btn-success" ng-click="Update()"><i class="fa  fa-database"></i> Update</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="overflow-y:auto;">
+                <table class="table table-striped table-bordered table-header-fixed">
+                    <thead>
+                        <tr>
+                            <th style="width:14%">Código</th>
+                            <th style="width:19%">Nombre</th>
+                            <th style="width:16%">Unidades</th>
+                            <th style="width:17%">Valor</th>
+                            <th style="width:16%">Total</th>
+                            <th ng-hide="data.StatusTransaction==3 || data.StatusTransaction==4">Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-if="items.length===0">
+                            <td colspan="60">No hay Registros</td>
+                        </tr>
+                        <tr ng-repeat="item in items| filter:Filter">
+                            <td>
+                                <input type="checkbox" name="Id" ng-click="item.disable = !item.disable" ng-disabled="data.StatusTransaction==3 || data.StatusTransaction==4">
+                                {{item.Product.Code}}
+                            </td>
+                            <td>
+                                <input type="text" ng-disabled="!item.disable" class="form-control  custom-control" name="Name" placeholder="Name" style="width:160px;" ng-model="item.Product.Name">
+                            </td>
+                            <td>
+                                <input type="text" ng-disabled="!item.disable" numeric-only class="form-control custom-control" name="Unit" placeholder="Unit" value="{{item.Unit | currency}}" style="width:60px;" ng-model="item.Unit">
+                            </td>
+                            <td>
+                                <input type="text" ng-disabled="!item.disable" numeric-only class="form-control  custom-control" name="PriceSalebyUnit" value="{{item.PriceSalebyUnit | currency}}" style="width:100px;" ng-model="item.PriceSalebyUnit">
+                            </td>
+                            <td>
+                                {{item.PriceSaleTotal|number}}
+                            </td>
+                            <td ng-switch="item.Status" ng-hide="data.StatusTransaction==3 || data.StatusTransaction==4">
+                                <div ng-switch-when="true">
+                                    <a title="inactivar" href="" confirm-click="Seguro que desea cambiar de estado este registro?" ng-click="Delete(item.Id,false)"><span class="glyphicon glyphicon-remove"></span></a>
+                                </div>
+                                <div ng-switch-when="false">
+                                    <a title="activar" href="" confirm-click="Seguro que desea cambiar de estado este registro?" ng-click="Delete(item.Id,true)"><span class="glyphicon glyphicon-ok"></span></a>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- /.box -->
+</section>
+<!-- /.content -->

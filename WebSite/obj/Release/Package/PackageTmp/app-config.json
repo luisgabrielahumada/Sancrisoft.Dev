@@ -1,0 +1,6 @@
+﻿{
+  "API_URL": "https://webflowersdatacentralwebapi.azurewebsites.net/Api/",
+  "NAME_BUS": "BigDataAllocation",
+  "TOKEN_URL": "https://webflowersdatacentralwebapi.azurewebsites.net",
+  "WORK_SPACE": "Dimension"
+}

@@ -1,0 +1,242 @@
+﻿<section class="content-header">
+    <h1>
+        Perfil del Usuario
+        <small></small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#/Home"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Perfil del Usuario</li>
+    </ol>
+</section>
+<section class="content">
+    <div class="row">
+        <div class="col-md-3">
+            <!-- Profile Image -->
+            <div class="box box-primary">
+                <div class="box-body box-profile">
+                    <img class="profile-user-img img-responsive img-circle" src="../Includes/dist/img/avatar00.png" alt="User profile picture">
+                    <h3 class="profile-username text-center">{{item.FirstName}} {{item.LastName}}</h3>
+                    <p class="text-muted text-center">{{item.UserName}}</p>
+                    <ul class="list-group list-group-unbordered">
+                        <li class="list-group-item">
+                            <b>Email</b> <a class="pull-right">{{item.Email}}</a>
+                        </li>
+                        <li class="list-group-item">
+                            <b>Perfil</b> <a class="pull-right">{{item.Profile.Name}}</a>
+                        </li>
+                        <li class="list-group-item">
+                            <b>Estado</b>
+                            <a class="pull-right" ng-if="item.Status===true">Activo </a>
+                            <a class="pull-right" ng-if="item.Status===false">Inactivo </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+            <!-- About Me Box -->
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Sessión <b>{{item.UserName}}</b></h3>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <strong><i class="fa fa-book margin-r-5"></i> Información Sessión</strong>
+                    <span class="label label-danger">
+                        {{authentication.Session}}
+                    </span>
+                    <hr>
+                    <strong><i class="fa fa-map-marker margin-r-5"></i> Ultimo ingreso</strong>
+                    <span class="label label-success">
+                        {{item.Updated}}
+                    </span>
+                    <hr>
+                    <strong><i class="fa fa-pencil margin-r-5"></i>Creación del Usuario</strong>
+                    <span class="label label-warning">{{item.Creation}}</span>
+                    <hr>
+                    <div class="form-group margin-bottom-none">
+                        <div class="col-sm-offset-2">
+                            <button type="submit" class="btn btn-warning" ng-click="ClearCache()">Clear Cache</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- /.col -->
+        <div class="col-md-9">
+            <div class="nav-tabs-custom">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="" ng-click="setTab(1)" data-toggle="tab">Perfil</a></li>
+                    <li><a href="" ng-click="setTab(2)" data-toggle="tab">Configuracion</a></li>
+                    <li><!--<a href="" ng-click="setTab(3)" data-toggle="tab">Historial</a>--></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane" id="Settings" ng-class="selectedTab==2 ? 'active' : ''">
+                        <form class="form-horizontal" name="myPasswordForm">
+                            <div class="post">
+                                <div class="user-block">
+                                    <div class="form-group" ng-class="(myPasswordForm.PasswordOld.$dirty || !isValid) && !myPasswordForm.PasswordOld.$valid?'has-error' : ''">
+                                        <label for="ds_password" class="col-sm-2 control-label">Clave Actual</label>
+                                        <div class="col-sm-10">
+                                            <input type="password" class="form-control custom-control" id="PasswordOld" name="PasswordOld" ng-maxlength="15" ng-minlength="6" ng-model="PasswordOld" placeholder="Clave" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group" ng-class="(myPasswordForm.NewPassword.$dirty || !isValid) && !myPasswordForm.NewPassword.$valid?'has-error' : ''">
+                                        <label for="ds_newpassword" class="col-sm-2 control-label">Nueva Clave</label>
+                                        <div class="col-sm-10">
+                                            <input type="password" class="form-control custom-control" id="NewPassword" name="NewPassword" ng-maxlength="15" ng-minlength="6" ng-model="NewPassword" placeholder="Nueva Clave" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group" ng-class="(myPasswordForm.ConfirmPassword.$dirty || !isValid) && !myPasswordForm.ConfirmPassword.$valid?'has-error' : ''">
+                                        <label for="ds_confirmpassword" class="col-sm-2 control-label">Confirmar Clave</label>
+                                        <div class="col-sm-10">
+                                            <input type="password" class="form-control custom-control" id="ConfirmPassword" name="ConfirmPassword" ng-maxlength="15" ng-minlength="6" ng-model="ConfirmPassword" placeholder="Confirma Clave" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="ds_comments" class="col-sm-2 control-label">Comentarios</label>
+                                        <div class="col-sm-10">
+                                            <input class="form-control custom-control" name="Comments" ng-model="Comments" type="text" placeholder="Type a comment">
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <div class="form-group margin-bottom-none">
+                                        <div class="col-sm-12 col-sm-offset-10">
+                                            <button type="submit" class="btn btn-danger" ng-click="ChangePassword()">Cambiar Clave</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- /.tab-pane -->
+                    <div class="tab-pane" id="History" ng-class="selectedTab==3 ? 'active' : ''">
+                        <!-- The timeline -->
+                        <ul class="timeline timeline-inverse" ng-repeat="data in itemtimeline">
+                            <!-- timeline time label -->
+                            <li class="time-label">
+                                <span class="bg-red" ng-class="data.in_hour>9 ? 'bg-green' : 'bg-blue'">
+                                    {{data.dt_date}}
+                                </span>
+                            </li>
+                            <!-- /.timeline-label -->
+                            <!-- timeline item -->
+                            <li>
+                                <i class="fa " ng-class="data.cd_timeline!='CREATE_SESSION' ? 'fa-user bg-blue' : 'fa-envelope bg-red'"></i>
+                                <div class="timeline-item">
+                                    <span class="time" ng-if="data.in_secound<=60"><i class="fa fa-clock-o"></i> {{data.in_secound}} sec</span>
+                                    <span class="time" ng-if="data.in_minute<=60"><i class="fa fa-clock-o"></i> {{data.in_minute}} min</span>
+                                    <span class="time" ng-if="data.in_hour<=60"><i class="fa fa-clock-o"></i> {{data.in_hour}} h</span>
+                                    <span class="time" ng-if="data.in_day<=24"><i class="fa fa-clock-o"></i> {{data.in_day}} day</span>
+                                    <span class="time" ng-if="data.in_month<=12"><i class="fa fa-clock-o"></i> {{data.in_month}} mes</span>
+                                    <span class="time" ng-if="data.in_your>=25"><i class="fa fa-clock-o"></i> {{data.in_your}} year</span>
+                                    <div class="timeline-body no-border">
+                                        <a href="#">{{data.cd_timeline}}</a>
+                                        {{data.ds_comments}}
+
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="pagination pagination-sm no-margin pull-right">
+                            <paging class="small"
+                                    ul-class="pagination"
+                                    active-class="active"
+                                    disabled-class="disabled"
+                                    page="pagination.pageIndex"
+                                    page-size="pagination.pageSize"
+                                    total="pagination.totalItemCount"
+                                    paging-action="GetTimeline(page)"
+                                    show-prev-next="true"
+                                    show-first-last="true">
+                            </paging>
+                        </ul>
+                    </div>
+                    <!-- /.tab-pane -->
+                    <div class="tab-pane" id="ProfileUser" ng-class="selectedTab==1 ? 'active' : ''">
+                        <form class="form-horizontal" name="myForm">
+                            <div class="form-group" ng-class="(myForm.UserName.$dirty || !isValid) && !myForm.UserName.$valid?'has-error' : ''">
+                                <label for="ds_login" class="col-sm-2 control-label">Login</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control custom-control" id="UserName" readonly="readonly" name="UserName" ng-model="item.UserName" placeholder="Name" required>
+                                </div>
+                            </div>
+                            <div class="form-group" ng-class="(myForm.Email.$dirty || !isValid) && !myForm.Email.$valid?'has-error' : ''">
+                                <label for="ds_email" class="col-sm-2 control-label">Email</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control custom-control" id="Email" name="Email" ng-model="item.Email" placeholder="Email" required>
+                                </div>
+                            </div>
+                            <div class="form-group" ng-class="(myForm.FirstName.$dirty || !isValid) && !myForm.FirstName.$valid?'has-error' : ''">
+                                <label for="ds_name" class="col-sm-2 control-label">Nombre</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control custom-control" id="FirstName" name="FirstName" ng-model="item.FirstName" placeholder="Nombres" required>
+                                </div>
+                            </div>
+                            <div class="form-group" ng-class="(myForm.LastName.$dirty || !isValid) && !myForm.LastName.$valid?'has-error' : ''">
+                                <label for="ds_name" class="col-sm-2 control-label">Apellido</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control custom-control" id="LastName" name="LastName" ng-model="item.LastName" placeholder="Apellidos" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <div class="checkbox">
+                                        <label class="control-label">
+                                            <input type="checkbox" id="Status" name="Status" ng-true-value="true" ng-false-value="false" ng-checked="item.Status===true" ng-model="item.Status">Estado
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <div class="checkbox">
+                                        <label class="control-label">
+                                            <input type="checkbox" id="IsSysAdmin" ng-true-value="true" ng-false-value="false" name="IsSysAdmin" ng-checked="item.IsSysAdmin===true" ng-model="item.IsSysAdmin">Super Administrador
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <div class="checkbox">
+                                        <label class="control-label">
+                                            <input type="checkbox" id="IsBlock" name="IsBlock" ng-true-value="true" ng-false-value="false" ng-checked="item.IsBlock===true" ng-model="item.IsBlock">Bloquear
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group" ng-class="(myForm.Profile.$dirty || !isValid) && !myForm.Profile.$valid?'has-error' : ''">
+                                <label for="inputSkills" class="col-sm-2 control-label">Perfil</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control select2 custom-control" style="width: 100%;" id="Profile" name="Profile" ng-model="item.Profile.Id" ng-options="data.Id as data.Name for data in items" required>
+                                        <option value="">Seleccione uno</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-2">
+                                    <button type="submit" class="btn btn-danger" ng-click="Save()">Guardar</button>
+                                </div>
+                                <div class="col-sm-2">
+                                    <button type="submit" class="btn btn-info" ng-click="ResetPassword()">Reiniar Clave</button>
+                                </div>
+                                <div class="col-sm-4">
+                                    <button type="submit" class="btn btn-warning" ng-click="RefreshToken()">Refrescar Token</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- /.tab-pane -->
+                </div>
+                <!-- /.tab-content -->
+            </div>
+            <!-- /.nav-tabs-custom -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>

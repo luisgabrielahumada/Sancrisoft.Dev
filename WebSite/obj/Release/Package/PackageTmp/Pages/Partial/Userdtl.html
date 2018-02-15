@@ -1,0 +1,83 @@
+﻿<section class="content-header">
+    <h1>
+        Detalle Usuario <b>{{item.ds_name}}</b>
+        <small></small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#/Home"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#/Users">Listado de Usuarios</a></li>
+        <li class="active">{{pageCurrent}}</li>
+    </ol>
+</section>
+<section class="content">
+    <form role="form" name="myForm">
+
+        <div class="box box-danger">
+            <div class="box-body">
+                <div class="row">
+                    <!-- left column -->
+                    <div class="col-md-6">
+                        <!-- text input -->
+                        <div class="form-group" ng-class="(myForm.FirstName.$dirty || !isValid) && !myForm.FirstName.$valid?'has-error' : ''">
+                            <label>Nombre</label>
+                            <input type="text" class="form-control custom-control" name="FirstName" placeholder="Name"  ng-model="item.FirstName" required>
+                        </div>
+                        <div class="form-group" ng-class="(myForm.UserName.$dirty || !isValid) && !myForm.UserName.$valid?'has-error' : ''">
+                            <label>Login</label>
+                            <input type="text" class="form-control custom-control" name="UserName" placeholder="Login" ng-disabled="Id!=0" ng-minlength="6" ng-model="item.UserName" required>
+                        </div>
+                        <div class="form-group" ng-show="Id==0" ng-class="(myForm.Password.$dirty || !isValid) && !myForm.Password.$valid?'has-error' : ''">
+                            <label>Password</label>
+                            <input type="password" class="form-control" name="Password" placeholder=""  ng-minlength="6" ng-maxlength="15" Password" ng-model="item.Password" required>
+                        </div>
+                    </div>
+                    <!-- left column -->
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Apellidos</label>
+                            <input type="text" class="form-control custom-control" name="LastName" ng-minlength="6" ng-maxlength="15" placeholder="LastName" ng-model="item.LastName">
+                        </div>
+                        <div class="form-group" ng-class="(myForm.Email.$dirty || !isValid) && !myForm.Email.$valid?'has-error' : ''">
+                            <label>Email</label>
+                            <input type="email" class="form-control custom-control" name="Email" placeholder="Email" ng-model="item.Email" required>
+                        </div>
+                        <!-- checkbox -->
+                        <div class="form-group">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="Status" ng-true-value="true" ng-false-value="false" ng-checked="item.Status===true" ng-model="item.Status">
+                                    Estado
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="IsSysAdmin" ng-true-value="true" ng-false-value="false" ng-checked="item.IsSysAdmin===true" ng-model="item.IsSysAdmin">
+                                    Super Administrador
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="IsBlock" ng-true-value="true" ng-false-value="false" ng-checked="item.IsBlock===true" ng-model="item.IsBlock">
+                                    Bloquear Usuario
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- select -->
+                        <div class="form-group" ng-class="(myForm.Profile.$dirty || !isValid) && !myForm.Profile.$valid?'has-error' : ''">
+                            <label>Perfil</label>
+                            <select class="form-control select2 custom-control" style="width: 100%;" id="Profile" name="Profile" ng-model="item.Profile_Id" ng-options="data.Id as data.Name for data in items" required>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-10">
+                                <button type="submit" class="btn btn-danger" ng-click="Save(item.Id)">Guardar</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</section>

@@ -1,0 +1,15 @@
+﻿{
+  "Settings": {
+    "appUriLocal": {
+      "key": "Arquitectura.Url.ApiServiceBaseUriLocal",
+      "value": "http://localhost/Arquitectura.Api/Api"
+    },
+    "appUriRemote": {
+      "key": "Arquitectura.Url.ApiServiceBaseUriLocal",
+      "value": "http://arquitecturaapi-website.azurewebsites.net/Api"
+    },
+    "appSettings": {
+      "active": "LOCAL"
+    }
+  }
+}

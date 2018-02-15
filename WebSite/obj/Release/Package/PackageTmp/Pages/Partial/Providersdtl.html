@@ -1,0 +1,68 @@
+﻿<section class="content-header">
+    <h1>
+        Detalle Proveedor <b>{{item.Name}}</b>
+        <small></small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#/Home"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#/Providers">Listado Proveedores</a></li>
+        <li class="active">{{pageCurrent}}</li>
+    </ol>
+</section>
+<section class="content">
+    <form role="form" name="myForm">
+        <div class="box box-info">
+            <div class="box-body">
+                <div class="row">
+                    <!-- left column -->
+                    <div class="col-md-6">
+                        <div class="form-group" ng-class="(myForm.BusinessName.$dirty || !isValid) && !myForm.BusinessName.$valid?'has-error' : ''">
+                            <label>Razón Social</label>
+                            <input type="text" class="form-control custom-control" name="BusinessName" placeholder="Razón Social" ng-model="item.BusinessName" required>
+                        </div>
+                        <div class="form-group" ng-class="(myForm.Email.$dirty || !isValid) && !myForm.Email.$valid?'has-error' : ''">
+                            <label>Email</label>
+                            <input type="text" class="form-control custom-control" name="Email" placeholder="Email" ng-model="item.Email" required>
+                        </div>
+
+                    </div>
+                    <div class="col-md-6">
+                        <!-- text input -->
+                        <div class="form-group" ng-class="(myForm.Nit.$dirty || !isValid) && !myForm.Nit.$valid?'has-error' : ''">
+                            <label>Nit</label>
+                            <input type="text" class="form-control custom-control" name="Nit" placeholder="Nit" ng-model="item.Nit" required>
+                        </div>
+                        <div class="form-group" ng-class="(myForm.Phone.$dirty || !isValid) && !myForm.Phone.$valid?'has-error' : ''">
+                            <label>Telefono</label>
+                            <input type="text" class="form-control custom-control" name="Phone" placeholder="Telefono" ng-model="item.Phone" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group" ng-class="(myForm.Address.$dirty || !isValid) && !myForm.Address.$valid?'has-error' : ''">
+                            <label>Dirección</label>
+                            <input type="text" class="form-control custom-control" name="Address" placeholder="Dirección" ng-model="item.Address">
+                        </div>
+                        <div class="form-group">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" class="minimal" name="in_active" ng-true-value="true" ng-false-value="false" ng-checked="item.Status===true" ng-model="item.Status">
+                                    Estado
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- checkbox -->
+                    <div class="form-group">
+                        <div class="col-sm-offset-11">
+                            <button type="submit" class="btn btn-danger" ng-click="Save()">Guardar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</section>

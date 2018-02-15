@@ -1,0 +1,86 @@
+﻿<section class="content-header">
+    <h1>
+        <small></small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#/Home"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">{{pageCurrent}}</li>
+    </ol>
+</section>
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box box-danger">
+                <div class="box-header">
+                    <h3 class="box-title"> Listado de Ciudades</h3> <small><a href="#/Cities/0" title="Nueva Ciudad"><span class="glyphicon glyphicon-plus"></span></a></small>
+                    <div class="box-tools">
+                        <div class="input-group input-group-sm" style="width: 350px;">
+                            <input type="text" name="search" ng-model="Filter" class="form-control pull-right" placeholder="Search">
+                            <div class="input-group-btn">
+                                <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Ciudad</th>
+                                <th>Pais</th>
+                                <th colspan="2">Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-if="items.length===0">
+                                <td colspan="20">No hay Registros</td>
+                            </tr>
+                            <tr ng-repeat="item in items| filter:Filter">
+                                <td><a href="#/Cities/{{item.Id}}"><span class="glyphicon glyphicon-pencil"></span></a></td>
+                                <td>
+                                    {{item.Name}}
+                                </td>
+                                <td>
+                                    {{item.Country.Name}}
+                                </td>
+                                <td ng-switch="item.Status">
+                                    <div ng-switch-when="true">
+                                        <a title="inactivar" href="" confirm-click="Seguro que desea cambiar de estado este registro?" ng-click="Delete(item.Id,false)"><span class="glyphicon glyphicon-remove"></span></a>
+                                    </div>
+                                    <div ng-switch-when="false">
+                                        <a title="activar" href="" confirm-click="Seguro que desea cambiar de estado este registro?" ng-click="Delete(item.Id,true)"><span class="glyphicon glyphicon-ok"></span></a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <a title="Eliminar" href="" confirm-click="Seguro que desea eliminar este registro?" ng-click="Remove(item.Id)"><span class="glyphicon glyphicon-trash"></span></a>
+                                </td>
+                            </tr>
+
+                    </table>
+                    <div class="box-footer clearfix">
+                        <ul class="pagination pagination-sm no-margin pull-right">
+                            <paging class="small"
+                                    ul-class="pagination"
+                                    active-class="active"
+                                    disabled-class="disabled"
+                                    page="pagination.pageIndex"
+                                    page-size="pagination.pageSize"
+                                    total="pagination.totalItemCount"
+                                    paging-action="List(page)"
+                                    show-prev-next="true"
+                                    show-first-last="true">
+                            </paging>
+                        </ul>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>
+<!-- /.content -->

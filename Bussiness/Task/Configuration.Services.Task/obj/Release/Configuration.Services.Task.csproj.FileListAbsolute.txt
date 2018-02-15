@@ -1,0 +1,17 @@
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Task\Configuration.Services.Task\bin\Release\Configuration.Services.Task.dll.config
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Task\Configuration.Services.Task\bin\Release\Configuration.Services.Task.dll
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Task\Configuration.Services.Task\bin\Release\Configuration.Services.Task.pdb
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Task\Configuration.Services.Task\bin\Release\Arquirectura.Helper.Core.dll
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Task\Configuration.Services.Task\bin\Release\Arquitectura.Bussiness.Core.dll
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Task\Configuration.Services.Task\bin\Release\Arquitectura.Bussiness.Infrastructure.dll
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Task\Configuration.Services.Task\bin\Release\Arquitectura.Entity.Model.dll
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Task\Configuration.Services.Task\bin\Release\Configuration.Entity.Models.dll
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Task\Configuration.Services.Task\bin\Release\Newtonsoft.Json.dll
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Task\Configuration.Services.Task\bin\Release\EntityFramework.dll
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Task\Configuration.Services.Task\bin\Release\Arquitectura.Bussiness.Task.dll
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Task\Configuration.Services.Task\bin\Release\Configuration.Entity.Models.pdb
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Task\Configuration.Services.Task\bin\Release\Newtonsoft.Json.xml
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Task\Configuration.Services.Task\bin\Release\EntityFramework.xml
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Task\Configuration.Services.Task\obj\Release\Configuration.Services.Task.csprojResolveAssemblyReference.cache
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Task\Configuration.Services.Task\obj\Release\Configuration.Services.Task.dll
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Task\Configuration.Services.Task\obj\Release\Configuration.Services.Task.pdb

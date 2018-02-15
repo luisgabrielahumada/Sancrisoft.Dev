@@ -1,0 +1,17 @@
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Model\Process.Entity.Models\bin\Debug\Process.Entity.Models.dll.config
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Model\Process.Entity.Models\bin\Debug\Process.Entity.Models.dll
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Model\Process.Entity.Models\bin\Debug\Process.Entity.Models.pdb
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Model\Process.Entity.Models\bin\Debug\Arquirectura.Helper.Core.dll
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Model\Process.Entity.Models\bin\Debug\Arquitectura.Bussiness.Core.dll
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Model\Process.Entity.Models\bin\Debug\Arquitectura.Entity.Model.dll
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Model\Process.Entity.Models\bin\Debug\Configuration.Entity.Models.dll
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Model\Process.Entity.Models\bin\Debug\EntityFramework.dll
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Model\Process.Entity.Models\bin\Debug\EntityFramework.SqlServer.dll
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Model\Process.Entity.Models\bin\Debug\Arquitectura.Bussiness.Task.dll
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Model\Process.Entity.Models\bin\Debug\Arquitectura.Bussiness.Infrastructure.dll
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Model\Process.Entity.Models\bin\Debug\Configuration.Entity.Models.pdb
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Model\Process.Entity.Models\bin\Debug\EntityFramework.xml
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Model\Process.Entity.Models\bin\Debug\EntityFramework.SqlServer.xml
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Model\Process.Entity.Models\obj\Debug\Process.Entity.Models.csprojResolveAssemblyReference.cache
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Model\Process.Entity.Models\obj\Debug\Process.Entity.Models.dll
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Model\Process.Entity.Models\obj\Debug\Process.Entity.Models.pdb

@@ -1,0 +1,255 @@
+﻿<section class="content-header">
+    <h1>
+        <small></small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#/Home"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">{{pageCurrent}}</li>
+    </ol>
+</section>
+<section class="content">
+    <div class="col-xs-12">
+        <div class="box box-warning">
+            <div class="box-header">
+                <div class="box-tools">
+                    <div class="col-xs-4">
+                        <div class="input-group-btn">
+                            <button type="submit" class="btn btn-default"><i class="fa fa-search"></i>&#160;Search</button>
+                        </div>
+                        <div class="input-group-btn">
+                            <button type="submit" class="btn btn-default"><i class="fa fa-save"></i>&#160;Save</button>
+                        </div>
+                        <div class="input-group-btn">
+                            <button type="submit" class="btn btn-default"><i class="fa fa-calendar"></i>&#160;Plan Date</button>
+                        </div>
+                        <div class="input-group-btn">
+                            <button type="submit" class="btn btn-default"><i class="fa fa-remove"></i>&#160;Delete Plan</button>
+                        </div>
+                    </div>
+                </div>
+                <br />
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <div class="form-group">
+                            <label>Date</label>
+                            <select class="form-control select2 custom-control" style="width: 100%;" id="dateType" name="dateType" ng-model="dateType" required>
+                                <option value="" selected>Seleccione uno</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-xs-3">
+                        <div class="form-group">
+                            <label>PO#</label>
+                            <input type="text" class="form-control custom-control" name="poNumber" placeholder="28897231" ng-model="poNumber" required>
+                        </div>
+                    </div>
+                    <div class="col-xs-3">
+                        <div class="form-group">
+                            <label>Product Code</label>
+                            <input type="text" class="form-control custom-control" name="product" placeholder="BK-0001" ng-model="product" required>
+                        </div>
+                    </div>
+                    <div class="col-xs-3">
+                        <div class="form-group">
+                            <label>Flower</label>
+                            <select class="form-control select2 custom-control" style="width: 100%;" id="flower" name="flower" ng-model="flower" required>
+                                <option value="" selected>Seleccione uno</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-3">
+                        <div class="form-group">
+                            <label>From</label>
+                            <input type="date" class="form-control custom-control" name="dateFrom" id="dateFrom" ng-model="dateFrom" required>
+                        </div>
+                    </div>
+                    <div class="col-xs-3">
+                        <div class="form-group">
+                            <label>Customer Group</label>
+                            <select class="form-control select2 custom-control" style="width: 100%;" id="customerGroup" name="customerGroup" ng-model="customerGroup" required>
+                                <option value="" selected>Seleccione uno</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-xs-3">
+                        <div class="form-group">
+                            <label>Box</label>
+                            <select class="form-control select2 custom-control" style="width: 100%;" id="box" name="box" ng-model="box" required>
+                                <option value="" selected>Seleccione uno</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-xs-3">
+                        <div class="form-group">
+                            <label>Color</label>
+                            <select class="form-control select2 custom-control" style="width: 100%;" id="color" name="color" ng-model="color" required>
+                                <option value="" selected>Seleccione uno</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-3">
+                        <div class="form-group">
+                            <label>To</label>
+                            <input type="date" class="form-control custom-control" name="dateTo" id="dateTo" ng-model="dateTo" required>
+                        </div>
+                    </div>
+                    <div class="col-xs-3">
+                        <div class="form-group">
+                            <label>Customer</label>
+                            <input type="text" class="form-control custom-control" name="poNumber" placeholder="28897231" ng-model="poNumber" required>
+                        </div>
+                    </div>
+                    <div class="col-xs-3">
+                        <div class="form-group">
+                        </div>
+                    </div>
+                    <div class="col-xs-3">
+                        <div class="form-group">
+                            <label>Grade</label>
+                            <select class="form-control select2 custom-control" style="width: 100%;" id="grade" name="grade" ng-model="grade" required>
+                                <option value="" selected>Seleccione uno</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-3">
+                        <div class="form-group">
+                            <label>Week</label>
+                            <select class="form-control select2 custom-control" style="width: 100%;" id="week" name="week" ng-model="week" required>
+                                <option value="" selected>Seleccione uno</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-xs-3">
+                        <div class="form-group">
+                            <label>Order Type</label>
+                            <select class="form-control select2 custom-control" style="width: 100%;" id="dateType" name="orderType" ng-model="orderType" required>
+                                <option value="" selected>Seleccione uno</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-xs-3">
+                        <div class="form-group">
+                        </div>
+                    </div>
+                    <div class="col-xs-3">
+                        <div class="form-group">
+                            <label>Variety</label>
+                            <select class="form-control select2 custom-control" style="width: 100%;" id="variety" name="variety" ng-model="variety" required>
+                                <option value="" selected>Seleccione uno</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <table class="table table-bordered" border="1">
+                    <thead>
+                        <tr>
+                            <td colspan="6">Items Selected: {{count}}</td>
+                            <td>Total:
+                            <td colspan="6">
+                                <div class="row">
+                                    <div class="col-xs-2">
+                                        <div style="padding: 3px; border: 1px solid #B4B8BC; background-color: #f4f4f4; font-weight: bold; text-align: right; width: 48px;height:28px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"></div>
+                                    </div>
+                                    <div class="col-xs-2">
+                                        <div style="padding: 3px; border: 1px solid #B4B8BC; background-color: #f4f4f4; font-weight: bold; text-align: right; width: 48px;height:28px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"></div>
+                                    </div>
+                                    <div class="col-xs-2">
+                                        <div style="padding: 3px; border: 1px solid #B4B8BC; background-color: #f4f4f4; font-weight: bold; text-align: right; width: 48px;height:28px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"></div>
+                                    </div>
+                                    <div class="col-xs-2">
+                                        <div style="padding: 3px; border: 1px solid #B4B8BC; background-color: #f4f4f4; font-weight: bold; text-align: right; width: 48px;height:28px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"></div>
+                                    </div>
+                                    <div class="col-xs-2">
+                                        <div style="padding: 3px; border: 1px solid #B4B8BC; background-color: #f4f4f4; font-weight: bold; text-align: right; width: 48px;height:28px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"></div>
+                                    </div>
+                                    <div class="col-xs-2">
+                                        <div style="padding: 3px; border: 1px solid #B4B8BC; background-color: #f4f4f4; font-weight: bold; text-align: right; width: 48px;height:28px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td colspan="2">Items/Page:</td>
+                            <td colspan="2">Page:</td>
+                            <td colspan="3">Total Items:{{items.length}}</td>
+                        </tr>
+                        <tr>
+                            <th rowspan="2">#</th>
+                            <th rowspan="2"></th>
+                            <th rowspan="2">ES</th>
+                            <th rowspan="2"></th>
+                            <th rowspan="2">OrderId</th>
+                            <th rowspan="2">PO#</th>
+                            <th rowspan="2">Order Ref.</th>
+                            <th rowspan="2">Customer Group</th>
+                            <th rowspan="2">Customer</th>
+                            <th rowspan="2">Product</th>
+                            <th rowspan="2">Box</th>
+                            <th rowspan="2">Stems/Box</th>
+                            <th rowspan="2">Bunches/Box</th>
+                            <th colspan="3" style="text-align:center">Boxes</th>
+                            <th colspan="4" style="text-align:center">Date</th>
+                        </tr>
+                        <tr>
+                            <th>Order</th>
+                            <th>Planned</th>
+                            <th>Pend.</th>
+                            <th>Modified</th>
+                            <th>Created</th>
+                            <th>Due Date</th>
+                            <th>Planned</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr ng-if="items.length===0">
+                            <td colspan="20">No hay Registros</td>
+                        </tr>
+                        <tr ng-repeat="item in items| filter:Filter">
+                            <td><a href="#/Countries/{{item.Id}}"><span class="glyphicon glyphicon-pencil"></span></a></td>
+                            <td>{{item.Code}}</td>
+                            <td>{{item.Name}}</td>
+                            <td ng-switch="item.Status">
+                                <div ng-switch-when="true">
+                                    <a title="inactivar" href="" confirm-click="Seguro que desea cambiar de estado este registro?" ng-click="Delete(item.Id,false)"><span class="glyphicon glyphicon-remove"></span></a>
+                                </div>
+                                <div ng-switch-when="false">
+                                    <a title="activar" href="" confirm-click="Seguro que desea cambiar de estado este registro?" ng-click="Delete(item.Id,true)"><span class="glyphicon glyphicon-ok"></span></a>
+                                </div>
+                            </td>
+                            <td>
+                                <a title="Eliminar" href="" confirm-click="Seguro que desea eliminar este registro?" ng-click="Remove(item.Id)"><span class="glyphicon glyphicon-trash"></span></a>
+                            </td>
+                        </tr>
+
+                </table>
+                <div class="box-footer clearfix">
+                    <ul class="pagination pagination-sm no-margin pull-right">
+                        <paging class="small"
+                                ul-class="pagination"
+                                active-class="active"
+                                disabled-class="disabled"
+                                page="pagination.pageIndex"
+                                page-size="pagination.pageSize"
+                                total="pagination.totalItemCount"
+                                paging-action="List(page)"
+                                show-prev-next="true"
+                                show-first-last="true">
+                        </paging>
+                    </ul>
+                </div>
+            </div>
+            <!-- /.box-body -->
+        </div>
+        <!-- /.box -->
+    </div>
+    <!-- /.row -->
+</section>
+<!-- /.content -->

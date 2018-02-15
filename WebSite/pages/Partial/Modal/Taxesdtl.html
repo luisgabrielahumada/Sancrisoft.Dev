@@ -1,0 +1,58 @@
+﻿<div class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" ng-click="close()" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Lista de Productos</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Imp</label>
+                            <select class="form-control select2 custom-control" style="width: 100%;" id="Taxes" name="Taxes" ng-model="Taxe" ng-options="items.Id as items.Name for items in rows" required>
+                                <option value="" selected>Seleccione uno</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-1">&#160;</div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <button type="button" class="btn btn-success" ng-click="Save()">Add</button>
+                        </div>
+                    </div>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Impuesto</th>
+                                <th>Tipo</th>
+                                <th>Opciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-if="itemsTaxes.length===0">
+                                <td colspan="20">No hay Registros</td>
+                            </tr>
+                            <tr ng-repeat="item in itemsTaxes" data-dismiss="modal">
+                                <td>
+                                    {{item.Name}}
+                                </td>
+                                <td>
+                                    {{item.TypeDescription}}
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-warning" data-toggle="modal" ng-click="Remove(item.Id)"><span class="glyphicon glyphicon-trash"></span></button>
+                                </td>
+                            </tr>
+                    </table>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div class="pull-right">
+                    <button type="button" ng-click="Close()" class="btn btn-primary pull-left" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+e

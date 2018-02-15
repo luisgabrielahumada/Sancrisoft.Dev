@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="ConnectionString.Bussiness.Web-Web.config Connection String" description="ConnectionString.Bussiness.Web Connection String used in web.config by the application to access the database." defaultValue="Data Source=dbserverdeploy.database.windows.net;Initial Catalog=sancrisoftdb;User ID=adminV2; Password= abc123$$;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\_Developer\\FinanControl\\Dev\\FinanControl\.Dev\\Dev\\WebApi\\FinanControl\.Api\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ConnectionString.Bussiness.Web']/@connectionString" />
+  </parameter>
+</parameters>

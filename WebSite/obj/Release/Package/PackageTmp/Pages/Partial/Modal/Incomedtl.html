@@ -1,0 +1,60 @@
+﻿<div class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" ng-click="close()" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Detalle Ingresos {{item.Name}}</h4>
+            </div>
+            <div class="modal-body">
+                <div class="modal-body">
+                    <form class="form-horizontal" role="form">
+                        <!-- left column -->
+                        <div class="col-md-12">
+                            <div class="form-group" ng-class="(myForm.Name.$dirty || !isValid) && !myForm.Name.$valid?'has-error' : ''">
+                                <label>Nombre</label>
+                                <input type="text" class="form-control custom-control" name="Name" placeholder="Nombres" ng-model="item.Name" required>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <!-- text input -->
+                            <div class="form-group" ng-class="(myForm.Description.$dirty || !isValid) && !myForm.Description.$valid?'has-error' : ''">
+                                <label>Descripcion</label>
+                                <input type="text" class="form-control custom-control" name="Description" placeholder="Description" ng-model="item.Description" required>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group" ng-class="(myForm.Value.$dirty || !isValid) && !myForm.Value.$valid?'has-error' : ''">
+                                <label>Valor</label>
+                                <input type="text" class="form-control custom-control" name="Value" placeholder="Value" ng-model="item.Value" required>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" class="minimal" name="Status" ng-true-value="true" ng-false-value="false" ng-checked="item.Status===true" ng-model="item.Status">
+                                        Estado
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <ul>
+                                <li ng-repeat="item in items| orderBy: 'Value'">
+                                    <input type="checkbox" ng-checked="item.Selected" ng-click="AddOrRemove(item,item.Selected)" value="{{item.Value}}"
+                                           ng-model="item.Selected" ng-true-value="true" ng-false-value="false"> {{item.Key}}
+                                </li>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <div class="pull-right">
+                        <button type="button" ng-click="Save()" class="btn btn-warning pull-left" data-dismiss="modal">Guardar</button>
+                        <button type="button" ng-click="Close()" class="btn btn-primary pull-left" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

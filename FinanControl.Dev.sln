@@ -1,0 +1,151 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApi", "WebApi", "{8442C7EA-F45C-4EC2-ABFB-573830633EBD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebSite", "WebSite", "{6ACF268B-4A3D-459A-921E-0B26ACDD4257}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSite", "WebSite\WebSite.csproj", "{62CDEF36-55E8-4803-A498-6F178DBBD75E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bussiness", "Bussiness", "{1221572A-D48E-4DBE-AC3B-1C2BF38FC7D3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Model", "Model", "{472E8E5B-F0C0-4FDF-A2E3-5E03443D6FEA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Task", "Task", "{2305D94B-2A67-4805-84D8-6D02B41CA661}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Configuration.Entity.Models", "Bussiness\Model\Configuration.Entity.Models\Configuration.Entity.Models.csproj", "{C9917C7B-0C3B-4113-A08C-B518E1128A5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Process.Entity.Models", "Bussiness\Model\Process.Entity.Models\Process.Entity.Models.csproj", "{E7E3B3E8-9568-4AD6-A049-F73B215AC4A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Configuration.Services.Task", "Bussiness\Task\Configuration.Services.Task\Configuration.Services.Task.csproj", "{1976C0CC-2637-4B17-BAFB-7BB23536EBE1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastruture.Task", "Bussiness\Task\Infrastruture.Task\Infrastruture.Task.csproj", "{36C439C3-7A8B-4511-B9A2-DCA078B8A0C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Process.Services.Task", "Bussiness\Task\Process.Services.Task\Process.Services.Task.csproj", "{4D3EEC69-E935-40CE-94C3-8A8564A5B772}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataBase", "DataBase", "{92791073-0C3A-425E-B038-EC67876C217D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinanControl.Api", "WebApi\FinanControl.Api\FinanControl.Api.csproj", "{CAB0B45B-7A24-4CDC-9621-747CA614CA83}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "FinanControl.Database", "FinanControl.Database\FinanControl.Database.sqlproj", "{FB9C0779-5968-423D-A4A0-92DA9B9C22C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sancrisoft.Entity.Models", "Bussiness\Model\Sancrisoft.Entity.Models\Sancrisoft.Entity.Models.csproj", "{949ECEE4-2BD2-4FB4-9A9C-B56843A958DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sancrisoft.Services.Task", "Bussiness\Task\Sancrisoft.Services.Task\Sancrisoft.Services.Task.csproj", "{F36DE015-037F-4CB8-9E91-CF8702372F76}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{62CDEF36-55E8-4803-A498-6F178DBBD75E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62CDEF36-55E8-4803-A498-6F178DBBD75E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62CDEF36-55E8-4803-A498-6F178DBBD75E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62CDEF36-55E8-4803-A498-6F178DBBD75E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9917C7B-0C3B-4113-A08C-B518E1128A5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9917C7B-0C3B-4113-A08C-B518E1128A5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9917C7B-0C3B-4113-A08C-B518E1128A5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9917C7B-0C3B-4113-A08C-B518E1128A5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7E3B3E8-9568-4AD6-A049-F73B215AC4A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7E3B3E8-9568-4AD6-A049-F73B215AC4A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7E3B3E8-9568-4AD6-A049-F73B215AC4A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7E3B3E8-9568-4AD6-A049-F73B215AC4A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1976C0CC-2637-4B17-BAFB-7BB23536EBE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1976C0CC-2637-4B17-BAFB-7BB23536EBE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1976C0CC-2637-4B17-BAFB-7BB23536EBE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1976C0CC-2637-4B17-BAFB-7BB23536EBE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36C439C3-7A8B-4511-B9A2-DCA078B8A0C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36C439C3-7A8B-4511-B9A2-DCA078B8A0C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36C439C3-7A8B-4511-B9A2-DCA078B8A0C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36C439C3-7A8B-4511-B9A2-DCA078B8A0C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D3EEC69-E935-40CE-94C3-8A8564A5B772}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D3EEC69-E935-40CE-94C3-8A8564A5B772}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D3EEC69-E935-40CE-94C3-8A8564A5B772}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D3EEC69-E935-40CE-94C3-8A8564A5B772}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAB0B45B-7A24-4CDC-9621-747CA614CA83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAB0B45B-7A24-4CDC-9621-747CA614CA83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAB0B45B-7A24-4CDC-9621-747CA614CA83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAB0B45B-7A24-4CDC-9621-747CA614CA83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB9C0779-5968-423D-A4A0-92DA9B9C22C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB9C0779-5968-423D-A4A0-92DA9B9C22C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB9C0779-5968-423D-A4A0-92DA9B9C22C2}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{FB9C0779-5968-423D-A4A0-92DA9B9C22C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB9C0779-5968-423D-A4A0-92DA9B9C22C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB9C0779-5968-423D-A4A0-92DA9B9C22C2}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{949ECEE4-2BD2-4FB4-9A9C-B56843A958DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{949ECEE4-2BD2-4FB4-9A9C-B56843A958DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{949ECEE4-2BD2-4FB4-9A9C-B56843A958DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{949ECEE4-2BD2-4FB4-9A9C-B56843A958DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F36DE015-037F-4CB8-9E91-CF8702372F76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F36DE015-037F-4CB8-9E91-CF8702372F76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F36DE015-037F-4CB8-9E91-CF8702372F76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F36DE015-037F-4CB8-9E91-CF8702372F76}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{62CDEF36-55E8-4803-A498-6F178DBBD75E} = {6ACF268B-4A3D-459A-921E-0B26ACDD4257}
+		{472E8E5B-F0C0-4FDF-A2E3-5E03443D6FEA} = {1221572A-D48E-4DBE-AC3B-1C2BF38FC7D3}
+		{2305D94B-2A67-4805-84D8-6D02B41CA661} = {1221572A-D48E-4DBE-AC3B-1C2BF38FC7D3}
+		{C9917C7B-0C3B-4113-A08C-B518E1128A5A} = {472E8E5B-F0C0-4FDF-A2E3-5E03443D6FEA}
+		{E7E3B3E8-9568-4AD6-A049-F73B215AC4A2} = {472E8E5B-F0C0-4FDF-A2E3-5E03443D6FEA}
+		{1976C0CC-2637-4B17-BAFB-7BB23536EBE1} = {2305D94B-2A67-4805-84D8-6D02B41CA661}
+		{36C439C3-7A8B-4511-B9A2-DCA078B8A0C2} = {2305D94B-2A67-4805-84D8-6D02B41CA661}
+		{4D3EEC69-E935-40CE-94C3-8A8564A5B772} = {2305D94B-2A67-4805-84D8-6D02B41CA661}
+		{CAB0B45B-7A24-4CDC-9621-747CA614CA83} = {8442C7EA-F45C-4EC2-ABFB-573830633EBD}
+		{FB9C0779-5968-423D-A4A0-92DA9B9C22C2} = {92791073-0C3A-425E-B038-EC67876C217D}
+		{949ECEE4-2BD2-4FB4-9A9C-B56843A958DF} = {472E8E5B-F0C0-4FDF-A2E3-5E03443D6FEA}
+		{F36DE015-037F-4CB8-9E91-CF8702372F76} = {2305D94B-2A67-4805-84D8-6D02B41CA661}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 7
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://mastercode.visualstudio.com/
+		SccProjectUniqueName0 = WebSite\\WebSite.csproj
+		SccProjectTopLevelParentUniqueName0 = FinanControl.Dev.sln
+		SccProjectName0 = WebSite
+		SccAuxPath0 = https://mastercode.visualstudio.com
+		SccLocalPath0 = WebSite
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName1 = Bussiness\\Model\\Configuration.Entity.Models\\Configuration.Entity.Models.csproj
+		SccProjectTopLevelParentUniqueName1 = FinanControl.Dev.sln
+		SccProjectName1 = Bussiness/Model/Configuration.Entity.Models
+		SccAuxPath1 = https://mastercode.visualstudio.com
+		SccLocalPath1 = Bussiness\\Model\\Configuration.Entity.Models
+		SccProvider1 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName2 = Bussiness\\Model\\Process.Entity.Models\\Process.Entity.Models.csproj
+		SccProjectTopLevelParentUniqueName2 = FinanControl.Dev.sln
+		SccProjectName2 = Bussiness/Model/Process.Entity.Models
+		SccAuxPath2 = https://mastercode.visualstudio.com
+		SccLocalPath2 = Bussiness\\Model\\Process.Entity.Models
+		SccProvider2 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName3 = Bussiness\\Task\\Configuration.Services.Task\\Configuration.Services.Task.csproj
+		SccProjectTopLevelParentUniqueName3 = FinanControl.Dev.sln
+		SccProjectName3 = Bussiness/Task/Configuration.Services.Task
+		SccAuxPath3 = https://mastercode.visualstudio.com
+		SccLocalPath3 = Bussiness\\Task\\Configuration.Services.Task
+		SccProvider3 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName4 = Bussiness\\Task\\Infrastruture.Task\\Infrastruture.Task.csproj
+		SccProjectTopLevelParentUniqueName4 = FinanControl.Dev.sln
+		SccProjectName4 = Bussiness/Task/Infrastruture.Task
+		SccAuxPath4 = https://mastercode.visualstudio.com
+		SccLocalPath4 = Bussiness\\Task\\Infrastruture.Task
+		SccProvider4 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName5 = Bussiness\\Task\\Process.Services.Task\\Process.Services.Task.csproj
+		SccProjectTopLevelParentUniqueName5 = FinanControl.Dev.sln
+		SccProjectName5 = Bussiness/Task/Process.Services.Task
+		SccAuxPath5 = https://mastercode.visualstudio.com
+		SccLocalPath5 = Bussiness\\Task\\Process.Services.Task
+		SccProvider5 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName6 = WebApi\\FinanControl.Api\\FinanControl.Api.csproj
+		SccProjectTopLevelParentUniqueName6 = FinanControl.Dev.sln
+		SccProjectName6 = WebApi/FinanControl.Api
+		SccAuxPath6 = https://mastercode.visualstudio.com
+		SccLocalPath6 = WebApi\\FinanControl.Api
+		SccProvider6 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+	EndGlobalSection
+EndGlobal

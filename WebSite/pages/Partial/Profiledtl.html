@@ -1,0 +1,57 @@
+﻿<section class="content-header">
+    <h1>
+        Detalle Perfil <b>{{item.ds_profile}}</b>
+        <small></small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#/Home"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#/Profiles">Listado de Perfiles</a></li>
+        <li class="active">{{pageCurrent}}</li>
+    </ol>
+</section>
+<section class="content">
+    <form role="form" name="myForm">
+
+        <div class="box box-warning">
+            <div class="box-body">
+                <div class="row">
+                    <!-- left column -->
+                    <div class="col-md-12">
+                        <!-- text input -->
+                        <div class="form-group" ng-class="(myForm.Name.$dirty || !isValid) && !myForm.Name.$valid?'has-error' : ''">
+                            <label>Perfil</label>
+                            <input type="text" class="form-control custom-control" name="Name" placeholder="Perfil" ng-model="item.Name" required>
+                        </div>
+                        <div class="form-group" ng-class="(myForm.Code.$dirty || !isValid) && !myForm.Code.$valid?'has-error' : ''">
+                            <label>Codigo</label>
+                            <input type="text" class="form-control custom-control" name="Code"  ng-disabled="Id!=0" placeholder="Code" ng-model="item.Code" required>
+                        </div>
+                        <!-- checkbox -->
+                        <div class="form-group">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="Status" ng-true-value="true" ng-false-value="false" ng-checked="item.Status===true" ng-model="item.Status">
+                                    Estado
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="IsBlock" ng-true-value="true" ng-false-value="false" ng-checked="item.IsBlock===true" ng-model="item.IsBlock">
+                                    Bloquear Usuario
+                                </label>
+                            </div>
+                        </div>
+                        <!-- select -->
+                        <div class="form-group">
+                            <div class="col-sm-offset-11">
+                                <button type="submit" class="btn btn-danger" ng-click="Save(item.Id)">Guardar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</section>

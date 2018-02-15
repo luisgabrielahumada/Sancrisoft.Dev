@@ -1,0 +1,84 @@
+﻿<div class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" ng-click="Close()" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="alert alert-info" role="alert">
+                            <h4>Order #{{data.Number}}</h4>
+                        </div>
+                    </div>
+                     <div class="col-md-4">
+                        <div class="alert alert-warning  left" role="alert">
+                            <h4>Valor a Pendiente: {{data.PricePending|currency}}</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="alert alert-error left" role="alert">
+                            <h4>Valor a Pagar: {{data.PriceTotal|currency}}</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h3>Seleccionar la  Forma de pago</h3>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h4><a href="" ng-click="formatPayment(0)" ng-class="FormatPayment==0?' alert alert-success':''"><span class="fa fa-cc-paypal"></span>Efectivo</a></h4>
+                            </div>
+                            <div class="col-md-4">
+                                <h4><a href="" ng-click="formatPayment(1)" ng-class="FormatPayment==1?' alert alert-success':''"><span class="fa fa-cc-visa"></span>Tarjeta Debito</a></h4>
+                            </div>
+                            <div class="col-md-4">
+                                <h4><a href="" ng-click="formatPayment(2)" ng-class="FormatPayment==2?' alert alert-success':''"><span class="fa fa-credit-card"></span>Tarjeta Credito</a></h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <!-- text input -->
+                                <div ng-class="(myForm.PricePayment.$dirty || !isValid) && !myForm.PricePayment.$valid?'has-error' : ''">
+                                    <h3>Valor a Pagar</h3>
+                                    <input type="text" numeric-only class="form-control custom-control input-lg" name="PricePayment" placeholder="pagar" ng-model="PricePayment" style="width:250px;font-size:xx-large;font-weight:bold" ng-blur="goPrice()" required>
+                                </div>
+                            </div>
+                            <div class="col-md-4" ng-show="FormatPayment!=0">
+                                <!-- text input -->
+                                <div ng-class="(myForm.VoucherCard.$dirty || !isValid) && !myForm.VoucherCard.$valid?'has-error' : ''">
+                                    <h3>Recibo</h3>
+                                    <input type="text" numeric-only class="form-control custom-control input-lg" name="VoucherCard" placeholder="# Recibo" style="width:200px;font-size:xx-large;font-weight:bold" ng-model="VoucherCard" required>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <!-- text input -->
+                                <div ng-class="(myForm.PriceReturn.$dirty || !isValid) && !myForm.PriceReturn.$valid?'has-error' : ''">
+                                    <h3>Devolver</h3>
+                                    <input type="text" readonly numeric-only class="form-control custom-control input-lg" name="PriceReturn" placeholder="Vueltos" style="width:200px;font-size:xx-large;font-weight:bold" ng-model="PriceReturn" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h3>Observaciones</h3>
+                                <input type="text" class="form-control custom-control" name="Observaciones" placeholder="Observaciones" style="font-size:xx-large;font-weight:bold" ng-model="Observation">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <div class="pull-right">
+                        <button type="button" class="btn btn-danger" ng-click="Save()"><h4>Pagar</h4></button>
+                    </div>
+                    <div class="pull-left">
+                        <button type="button" ng-click="Close()" class="btn btn-primary pull-left" data-dismiss="modal"><h4>Cancelar</h4></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    e

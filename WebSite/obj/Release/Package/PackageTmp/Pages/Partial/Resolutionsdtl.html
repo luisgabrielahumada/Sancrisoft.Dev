@@ -1,0 +1,86 @@
+﻿<section class="content-header">
+    <h1>
+        Detalle Producto <b>{{item.Name}}</b>
+        <small></small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#/Home"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#/Resolutions">Listado Resoluciones</a></li>
+        <li class="active">{{pageCurrent}}</li>
+    </ol>
+</section>
+<section class="content">
+    <form role="form" name="myForm">
+        <div class="box box-info">
+            <div class="box-body">
+                <div class="row">
+                    <!-- left column -->
+                    <div class="col-md-6">
+                        <div class="form-group" ng-class="(myForm.Prefix.$dirty || !isValid) && !myForm.Prefix.$valid?'has-error' : ''">
+                            <label>Prefix</label>
+                            <input type="text" class="form-control custom-control" style="text-transform: uppercase" name="Prefix" placeholder="Prefix" ng-model="item.Prefix" ng-disabled="item.Id!='0'" required>
+                        </div>
+                        <div class="form-group" ng-class="(myForm.InitialRange.$dirty || !isValid) && !myForm.InitialRange.$valid?'has-error' : ''">
+                            <label>Rango Inicial</label>
+                            <input type="text" class="form-control custom-control" name="InitialRange" placeholder="Rango Inicial" ng-model="item.InitialRange" ng-disabled="item.Id!='0'" required>
+                        </div>
+                      
+                    </div>
+                    <div class="col-md-6">
+
+                        <div class="form-group" ng-class="(myForm.Expiration.$dirty || !isValid) && !myForm.Expiration.$valid?'has-error' : ''">
+                            <label>Fecha Expiración</label>
+                            <input type="date" date class="form-control custom-control" name="Expiration" value="{{ item.Expiration | date: 'yyyy-MM-dd' }}" placeholder="" ng-model="item.Expiration" required>
+                        </div>
+                        <!-- text input -->
+                        <div class="form-group" ng-class="(myForm.FinalRange.$dirty || !isValid) && !myForm.FinalRange.$valid?'has-error' : ''">
+                            <label>Rango Final</label>
+                            <input type="text" class="form-control custom-control" name="FinalRange" placeholder="Final Range" ng-model="item.FinalRange" ng-disabled="item.Id!='0'" required>
+                        </div>
+
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group" ng-class="(myForm.Type.$dirty || !isValid) && !myForm.Type.$valid?'has-error' : ''">
+                            <label>Tipo</label>
+                            <select class="form-control select2  custom-control" style="width: 100%;" id="Type" name="Type" ng-model="item.Type" ng-options="data.Value as data.Key for data in types" required>
+                                <option value="" selected>Seleccione uno</option>
+                            </select>
+                        </div>
+                      
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Ultimo Documento</label>
+                            <input type="text" class="form-control custom-control" name="CurrentRange" placeholder="CurrentRange" readonly ng-model="item.CurrentRange">
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group" ng-class="(myForm.Description.$dirty || !isValid) && !myForm.Description.$valid?'has-error' : ''">
+                            <label>Descripción</label>
+                            <input type="text" class="form-control custom-control" name="Description" placeholder="Description" ng-model="item.Description"  required>
+                        </div>
+                        <div class="form-group">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" class="minimal" name="in_active" ng-true-value="true" ng-false-value="false" ng-checked="item.Status===true" ng-model="item.Status">
+                                    Estado
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <!-- checkbox -->
+                <div class="form-group">
+                    <div class="col-sm-offset-11">
+                        <button type="submit" class="btn btn-danger" ng-click="Save()">Guardar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</section>

@@ -1,0 +1,104 @@
+﻿<section class="content-header">
+    <h1>
+        Información del Postulado <b>{{item.firstName}} {{item.lastName}}</b>
+        <small></small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#/Home"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#/Inscriptions">Listado de Postulados</a></li>
+        <li class="active">{{pageCurrent}}</li>
+    </ol>
+</section>
+<section class="content">
+    <form role="form" name="myForm">
+        <div class="box box-info">
+            <div class="box-body">
+                <div class="row">
+                    <!-- left column -->
+                    <div class="col-md-3">
+                        <!-- Profile Image -->
+                        <div class="box box-primary">
+                            <div class="box-body box-profile">
+                                <img ng-if="!isShow" class="profile-user-img img-responsive" ng-src="data:image/jpeg;base64,{{ img.body  }}" alt="User profile picture" />
+                                <img ng-if="isShow" class="profile-user-img img-responsive" src="../Includes/dist/img/avatar00.png" alt="User profile picture">
+                                <!--<input type="file" class="form-control custom-control" name="imageProfile">-->
+                                <ul class="list-group list-group-unbordered">
+                                    <li class="list-group-item">
+                                        <b>Pais:</b> <a class="pull-right">{{item.country}}</a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <b>Ciudad:</b> <a class="pull-right">{{item.city}}</a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <b>Dirección:</b><a class="pull-right">{{item.address}}</a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <b>Zip:</b><a class="pull-right">{{item.zip}}</a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <b>Estado:</b><a class="pull-right">{{item.state}}</a>
+                                    </li>
+                                </ul>
+                                <input type="text" class="form-control custom-control" name="description" placeholder="Descripción" ng-model="item.description">
+                                <!--<h2 class="profile-username text-center">Adjuntar Certificados</h2>
+                                <input type="file" class="form-control custom-control" name="certificate">-->
+                            </div>
+                            <!-- /.box-body -->
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group" ng-class="(myForm.charge.$dirty || !isValid) && !myForm.charge.$valid?'has-error' : ''">
+                                    <label>Cargo</label>
+                                    <select class="form-control select2 custom-control" style="width: 100%;" id="TypeDocument" name="TypeDocument" ng-model="item.charge.Id" ng-options="data.Id as data.name for data in items" required>
+                                        <option value="" selected>Seleccione uno</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <!-- text input -->
+                                <div class="form-group" ng-class="(myForm.firstName.$dirty || !isValid) && !myForm.firstName.$valid?'has-error' : ''">
+                                    <label>Nombre</label>
+                                    <input type="text" class="form-control custom-control" name="firstName" placeholder="Nombre" ng-model="item.firstName" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group" ng-class="(myForm.lastName.$dirty || !isValid) && !myForm.lastName.$valid?'has-error' : ''">
+                                    <label>Apellido</label>
+                                    <input type="text" class="form-control custom-control" name="lastName" placeholder="Apellido" ng-model="item.lastName" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <!-- text input -->
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="text" class="form-control custom-control" name="email" placeholder="Email" ng-model="item.email">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Teléfono</label>
+                                    <input type="text" class="form-control custom-control" name="phone" placeholder="Teléfono" ng-model="item.phone">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Fecha Nacimiento</label>
+                                    <input type="date" class="form-control custom-control" name="birthDate" placeholder="YYYY/MM/DD" value="{{ item.birthDate | date: 'yyyy-MM-dd' }}" ng-model="item.birthDate">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Biografía</label>
+                                    <textarea class="form-control custom-control" name="biography" col="30" rows="5" placeholder="Biografía" ng-model="item.biography"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- left column -->
+                </div>
+            </div>
+        </div>
+    </form>
+</section>

@@ -1,0 +1,83 @@
+﻿<section class="content-header">
+    <h1>
+        Detalle Producto <b>{{item.Name}}</b>
+        <small></small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#/Home"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#/Products">Listado Products</a></li>
+        <li class="active">{{pageCurrent}}</li>
+    </ol>
+</section>
+<section class="content">
+    <form role="form" name="myForm">
+        <div class="box box-info">
+            <div class="box-body">
+                <div class="row">
+                    <!-- left column -->
+                    <div class="col-md-6">
+                        <div class="form-group" ng-class="(myForm.Name.$dirty || !isValid) && !myForm.Name.$valid?'has-error' : ''">
+                            <label>Nombre Producto</label>
+                            <input type="text" class="form-control custom-control" name="Name" placeholder="Nombre" ng-model="item.Name" required>
+                        </div>
+                        <div class="form-group" ng-class="(myForm.Provider_Id.$dirty || !isValid) && !myForm.Provider_Id.$valid?'has-error' : ''">
+                            <label>Proveedor</label>
+                            <select class="form-control select2  custom-control" style="width: 100%;" id="Provider_Id" name="Provider_Id" ng-model="item.Provider_Id" ng-options="data.Id as data.BusinessName for data in items" required>
+                                <option value="" selected>Seleccione uno</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <!-- text input -->
+                        <div class="form-group" ng-class="(myForm.Code.$dirty || !isValid) && !myForm.Code.$valid?'has-error' : ''">
+                            <label>Código</label>
+                            <input type="text" class="form-control custom-control" name="Código" style="text-transform: uppercase" placeholder="Code" ng-model="item.Code" ng-disabled="item.Id!='0'" required>
+                        </div>
+                        <div class="form-group" ng-class="(myForm.Utility.$dirty || !isValid) && !myForm.Utility.$valid?'has-error' : ''">
+                            <label>Utilidad</label>
+                            <input type="text" class="form-control custom-control" name="Utility" placeholder="Utilidad" ng-model="item.Utility" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group" ng-class="(myForm.PriceSale.$dirty || !isValid) && !myForm.PriceSale.$valid?'has-error' : ''">
+                            <label>Precio de Venta</label>
+                            <input type="text" numeric-only  class="form-control custom-control" name="PriceSale" placeholder="Precio de Venta" ng-model="item.PriceSale" required>
+                        </div>
+                        <div class="form-group">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" class="minimal" name="in_active" ng-true-value="true" ng-false-value="false" ng-checked="item.Status===true" ng-model="item.Status">
+                                Estado
+                            </label>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group" ng-class="(myForm.ServiceType.$dirty || !isValid) && !myForm.ServiceType.$valid?'has-error' : ''">
+                            <label>Tipo Servicio</label>
+                            <select class="form-control select2  custom-control" style="width: 100%;" id="ServiceType" name="ServiceType" ng-model="item.ServiceType"  required>
+                                <option value=" " selected>Seleccione uno</option>
+                                <option ng-repeat="data in serviceTypes" ng-selected="item.ServiceType==data.Value" ng-value="data.Value">{{data.Key}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group" ng-class="(myForm.AlertStock.$dirty || !isValid) && !myForm.AlertStock.$valid?'has-error' : ''">
+                            <label>Alerta Stock</label>
+                            <input type="text" class="form-control custom-control" name="AlertStock" placeholder="Alerta Stock" ng-model="item.AlertStock" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <!-- checkbox -->
+                <div class="form-group">
+                    <div class="col-sm-offset-10">
+                        <input type="button" ng-show="item.Id!='0'" name="Imp" value="Imp" class="btn btn-warning" ng-click="NewOrEdit()"></input>
+                        <button type="submit" class="btn btn-danger" ng-click="Save()">Guardar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</section>

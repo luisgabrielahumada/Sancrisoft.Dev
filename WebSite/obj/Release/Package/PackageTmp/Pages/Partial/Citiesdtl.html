@@ -1,0 +1,59 @@
+﻿<section class="content-header">
+    <h1>
+        Detalle Ciudad <b>{{item.Name}}</b>
+        <small></small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#/Home"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#/Cities">Listado Ciudades</a></li>
+        <li class="active">{{pageCurrent}}</li>
+    </ol>
+</section>
+<section class="content">
+    <form role="form" name="myForm">
+        <div class="box box-info">
+            <div class="box-body">
+                <div class="row">
+                    <!-- left column -->
+                    <div class="col-md-6">
+                        <div class="form-group" ng-class="(myForm.Code.$dirty || !isValid) && !myForm.Code.$valid?'has-error' : ''">
+                            <label>Código</label>
+                            <input type="text" class="form-control custom-control" style="text-transform: uppercase" name="Code" placeholder="Código" ng-model="item.Code" required>
+                        </div>
+                        <div class="form-group" ng-class="(myForm.Country.$dirty || !isValid) && !myForm.Country.$valid?'has-error' : ''">
+                            <label>Pais</label>
+                            <select class="form-control select2 custom-control" style="width: 100%;" id="Country" name="Country" ng-model="item.Country_Id" ng-options="data.Id as data.Name for data in countryitems" required>
+                                <option value="" selected>Seleccione uno</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <!-- text input -->
+                        <div class="form-group" ng-class="(myForm.Name.$dirty || !isValid) && !myForm.Name.$valid?'has-error' : ''">
+                            <label>Ciudad</label>
+                            <input type="text" class="form-control custom-control" name="Name" placeholder="Ciudad" ng-model="item.Name" required>
+                        </div>
+                        <div class="form-group">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" class="minimal" name="in_active" ng-true-value="true" ng-false-value="false" ng-checked="item.Status===true" ng-model="item.Status">
+                                    Estado
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- checkbox -->
+                    <div class="form-group">
+                        <div class="col-sm-offset-11">
+                            <button type="submit" class="btn btn-danger" ng-click="Save()">Guardar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</section>

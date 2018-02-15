@@ -1,0 +1,76 @@
+﻿<div class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" ng-click="close()" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title">Lista de Pagos de la Orden {{number}}</h3>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form">
+                    <table class="table table-bordered">
+                        <thead>
+
+                            <tr>
+                                <th>Tipo Pago</th>
+                                <th>Valor</th>
+                                <th>Pendiente</th>
+                                <th>Voucher</th>
+                                <th>Observaciones</th>
+                                <th>Fecha</th>
+                                <th colspan="2">Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-if="items.length===0">
+                                <td colspan="20">No hay Registros</td>
+                            </tr>
+                            <tr ng-repeat="item in items| filter:Filter">
+                                <td ng-switch="item.Payment">
+                                    <span ng-switch-when="0">
+                                        Efectivo
+                                    </span>
+                                    <span ng-switch-when="1">
+                                        Tarjeta Credito
+                                    </span>
+                                    <span ng-switch-when="2">
+                                        Tarjeta Debito
+                                    </span>
+                                </td>
+                                <td>
+                                    {{item.PricePayment|currency}}
+                                </td>
+                                <td>
+                                    {{item.PricePending|currency}}
+                                </td>
+                                <td>
+                                    {{item.VoucherCard}}
+                                </td>
+                                <td>
+                                    {{item.Observation}}
+                                </td>
+                                <td>
+                                    {{item.Creation|date:'yyyy/mm/dd hh:mm:ss'}}
+                                </td>
+                                <td>
+                                    <a title="Eliminar" href="" confirm-click="Seguro que desea eliminar este registro?" ng-click="Remove(item.Id)"><span class="glyphicon glyphicon-trash"></span></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tfooter>
+                            <tr>
+                                <th class="alert-info"><h4>Valor Pendiente: {{pricePending|currency}}</h4></th>
+                                <th colspan="6" class="alert-error"><h4>Valor Total: {{priceTotal|currency}}</h4></th>
+                            </tr>
+                        </tfooter>
+                    </table>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div class="pull-right">
+                    <button type="button" ng-click="Close()" class="btn btn-primary pull-left" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+e

@@ -1,0 +1,42 @@
+﻿<section class="content-header">
+    <h1>
+        401 Unauthorized
+    </h1>
+</section>
+<section class="content">
+    <div class="error-page">
+        <h2 class="headline text-red">401</h2>
+        <div class="error-content">
+            <h3><i class="fa fa-warning text-red"></i> Oops! Operación no Autorizada.</h3>
+            <p>
+                usted no posse permisos para realizar esta operación
+                Por favor contacte al administrador del sistema para continuar dar click aquí <a href="#/Home">inbox</a>
+            </p>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                Click en Reiniciar el Token para verificar si su problema es por vencimiento, si esto no funciona comuniquese con el administrador del sistema.
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-8">
+
+                <form class="form-horizontal" name="myForm">
+                    <div class="form-group" ng-class="(myForm.ds_login.$dirty || !isValid) && !myForm.ds_login.$valid?'has-error' : ''">
+                        <label for="ds_login" class="col-sm-2 control-label">Login</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="ds_login" name="ds_login" ng-model="ds_login" placeholder="Name" required>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <button type="submit" class="btn btn-warning" ng-click="RefreshToken()">Refrescar Token</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.error-page -->
+</section>

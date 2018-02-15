@@ -1,0 +1,9 @@
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\FinanControl.Database\bin\Debug\FinanControl.Database.dacpac
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\FinanControl.Database\bin\Debug\FinanControl.Database.dll
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\FinanControl.Database\bin\Debug\FinanControl.Database.pdb
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\FinanControl.Database\obj\Debug\FinanControl.Database.dll
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\FinanControl.Database\obj\Debug\FinanControl.Database.pdb
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\FinanControl.Database\obj\Debug\Model.xml
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\FinanControl.Database\obj\Debug\refactor.xml
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\FinanControl.Database\obj\Debug\postdeploy.sql
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\FinanControl.Database\obj\Debug\predeploy.sql

@@ -1,0 +1,83 @@
+﻿<section class="content-header">
+    <h1>
+        Detalle Plantilla <b>{{item.ds_name}}</b>
+        <small></small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#/Home"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#/EmailBody">Listado Plantillas Emails</a></li>
+        <li class="active">{{pageCurrent}}</li>
+    </ol>
+</section>
+<section class="content">
+    <form role="form" name="myForm" enctype="multipart/form-data">
+        <div class="box box-info">
+            <div class="box-body">
+                <div class="row">
+                    <!-- /.col -->
+                    <div class="col-md-12">
+                        <!-- /.box-header -->
+                        <div class="form-group" ng-class="(myForm.ds_name.$dirty || !isValid) && !myForm.ds_name.$valid?'has-error' : ''">
+                            <label>Nombre</label>
+                            <input type="text" class="form-control custom-control" name="ds_name" placeholder="Nombre" ng-model="item.ds_name" required>
+                        </div>
+                        <div class="form-group" ng-class="(myForm.cd_email_to.$dirty || !isValid) && !myForm.cd_email_to.$valid?'has-error' : ''">
+                            <label>Codigo</label>
+                            <input type="text" class="form-control custom-control" name="cd_email_to" ng-disabled="Id!=0" placeholder="Codigo" ng-model="item.cd_email_to" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group" ng-if="item.ds_filename==null" ng-class="(myForm.ds_upload.$dirty || !isValid) && !myForm.ds_upload.$valid?'has-error' : ''">
+                            <input type="file" ngf-select ngf-multiple="true" accept="" name="ds_upload" ng-model="item.ds_upload" />
+                        </div>
+                        <div class="form-group" ng-show="item.ds_filename!=null">
+                            <label>Plantilla::</label>{{item.ds_filename}}   <a  ng-click="DeleteFile(item.cd_upload)" title="Eliminar" href="" confirm-click="Seguro que desea eliminar este registro?"><span class="glyphicon glyphicon-trash"></span></a> <a ng-click="DownloadFile(item.cd_upload)" title="descargar" href=""><span class="glyphicon glyphicon-download-alt"></span></a> 
+                        </div>
+                    </div>
+                    <!--<div class="col-md-4">
+                        <button class="btn btn-warning" ng-click="uploadFile()">Cargar</button>
+                    </div>-->
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" class="minimal" name="in_active" ng-true-value="true" ng-false-value="false" ng-checked="item.in_active===true" ng-model="item.in_active">
+                                    Estado
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <div class="col-sm-offset-10">
+                                <button type="submit" class="btn btn-danger" ng-click="Save()">Guardar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row"><div class="col-md-12"><label>Body</label>  <small>Definir el contenido del correo si es posible en formato HTML</small></div></div>
+                <div class="row">
+
+                    <!-- /.col -->
+                    <div class="col-md-12">
+                        <div class="form-group" ng-class="(myForm.ds_body.$dirty || !isValid) && !myForm.ds_body.$valid?'has-error': ''">
+                            <textarea id="compose-textarea" class="form-control  custom-control textarea" name="ds_body" ng-model="item.ds_body" style="height:90px" required></textarea>
+                        </div>
+
+                    </div>
+                    <!--<div class="col-md-6">
+                        <div class="form-group" ng-class="(myForm.ds_body.$dirty || !isValid) && !myForm.ds_body.$valid?'has-error': ''">
+                            <div hljs hljs-source="item.ds_body" hljs-interpolate="true" compile="true">
+
+                            </div>
+                        </div>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+    </form>
+</section>

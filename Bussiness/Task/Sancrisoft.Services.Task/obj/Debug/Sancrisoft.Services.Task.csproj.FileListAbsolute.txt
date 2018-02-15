@@ -1,0 +1,12 @@
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Task\Sancrisoft.Services.Task\bin\Debug\Sancrisoft.Services.Task.dll
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Task\Sancrisoft.Services.Task\bin\Debug\Sancrisoft.Services.Task.pdb
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Task\Sancrisoft.Services.Task\bin\Debug\Arquirectura.Helper.Core.dll
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Task\Sancrisoft.Services.Task\bin\Debug\Arquitectura.Bussiness.Infrastructure.dll
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Task\Sancrisoft.Services.Task\bin\Debug\Arquitectura.Entity.Model.dll
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Task\Sancrisoft.Services.Task\bin\Debug\Sancrisoft.Entity.Models.dll
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Task\Sancrisoft.Services.Task\bin\Debug\EntityFramework.dll
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Task\Sancrisoft.Services.Task\bin\Debug\Sancrisoft.Entity.Models.pdb
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Task\Sancrisoft.Services.Task\bin\Debug\EntityFramework.xml
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Task\Sancrisoft.Services.Task\obj\Debug\Sancrisoft.Services.Task.csprojResolveAssemblyReference.cache
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Task\Sancrisoft.Services.Task\obj\Debug\Sancrisoft.Services.Task.dll
+D:\_Developer\FinanControl\Dev\FinanControl.Dev\Dev\Bussiness\Task\Sancrisoft.Services.Task\obj\Debug\Sancrisoft.Services.Task.pdb

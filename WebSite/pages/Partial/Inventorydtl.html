@@ -1,0 +1,79 @@
+﻿<section class="content-header">
+    <h1>
+        Inventario de <b>{{item.Name}}</b>
+        <small></small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#/Home"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#/Inventory">Registro de Inventario</a></li>
+        <li class="active">{{pageCurrent}}</li>
+    </ol>
+</section>
+<section class="content">
+    <form role="form" name="myForm">
+        <div class="box box-info">
+            <div class="box-body">
+                <div class="row">
+                    <!-- left column -->
+                    <div class="col-md-6">
+                        <!-- text input -->
+                        <div class="form-group" ng-class="(myForm.Product_Id.$dirty || !isValid) && !myForm.Product_Id.$valid?'has-error' : ''">
+                            <label>Producto</label>
+                            <select class="form-control select2 custom-control" style="width: 100%;" id="Product_Id" name="Product_Id" ng-model="item.Product_Id" ng-options="data.Id as data.Name for data in items" required>
+                                <option value="">Seleccione uno</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group" ng-class="(myForm.Quantity.$dirty || !isValid) && !myForm.Quantity.$valid?'has-error' : ''">
+                            <label>Stock</label>
+                            <input type="text" class="form-control custom-control" name="Quantity" ng-disabled="item.Id!='0'" placeholder="Cantidad" ng-model="item.Quantity" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group" ng-class="(myForm.Code.$dirty || !isValid) && !myForm.Code.$valid?'has-error' : ''">
+                            <label>Código</label>
+                            <input type="text" class="form-control custom-control" name="Code" style="text-transform: uppercase" placeholder="Código" ng-disabled="item.Id!='0'" ng-model="item.Code" required>
+                        </div>
+                        <div class="form-group" ng-class="(myForm.DueDate.$dirty || !isValid) && !myForm.DueDate.$valid?'has-error' : ''">
+                            <label>Fecha Expiración</label>
+                            <input type="date" date class="form-control custom-control" name="DueDate" value="{{ item.DueDate | date: 'yyyy-MM-dd' }}" placeholder="" ng-model="item.DueDate" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group" ng-class="(myForm.PriceBy.$dirty || !isValid) && !myForm.PriceBy.$valid?'has-error' : ''">
+                            <label>Precio Compra</label>
+                            <input type="text" numeric-only class="form-control custom-control" name="PriceBy" ng-model="item.PriceBy" required>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" class="minimal" name="Status" ng-true-value="true" ng-false-value="false" ng-checked="item.Status===true" ng-model="item.Status">
+                                    Estado
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <!-- select -->
+                        <div class="form-group" ng-class="(myForm.PriceSale.$dirty || !isValid) && !myForm.PriceSale.$valid?'has-error' : ''">
+                            <label>Precio Venta</label>
+                            <input type="text" numeric-only  class="form-control custom-control" name="PriceSale" ng-model="item.PriceSale" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- checkbox -->
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-11">
+                                <button type="submit" class="btn btn-danger" ng-click="Save(item.Id)">Guardar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</section>

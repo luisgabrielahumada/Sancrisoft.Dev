@@ -1,0 +1,239 @@
+﻿<section class="content-header">
+    <h1>
+        <small></small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#/Home"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">{{pageCurrent}}</li>
+    </ol>
+</section>
+<section class="content">
+    <div class="box box-info">
+        <div class="box-header">
+            <h3 class="box-title">Permisos Por Perfil</h3> <small>::</small>
+        </div>
+       
+        <div class="box-body">
+            <div class="row">
+                <div class="col-xs-4">
+                    <!-- /.box-header -->
+                    <div class="box-body no-padding">
+                        <ul class="nav nav-pills nav-stacked">
+                            <li ng-repeat="parent in parents">
+                                <h4 ng-show="parent.Menu.IsParent==true"><span class="fa fa-circle-o text-red">&nbsp;</span><a href="#/Permissions/{{parent.Menu.Id}}">{{parent.Menu.Name}}</a></h4>
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li ng-repeat="item in parents">
+                                        <a href="#/Permissions/{{item.Menu.Id}}"  ng-if="item.Menu.Parent==parent.Menu.Id && item.Menu.IsParent==false">{{item.Menu.Name}}</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <!--<ul class="nav nav-pills nav-stacked">
+                            <li>
+                                <h4><span class="fa fa-circle-o text-red"></span> Otros</h4>
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li ng-repeat="item in parentItems">
+                                        <a href="#/Permissions/{{item.Id}}/{{item.id}}">{{item.Name}}</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>-->
+                    </div>
+                    <!-- /.box -->
+                </div>
+                    <div class="row" ng-if="viewprofile===false && viewusers===false">
+                        <h2 class="page-header">Aviso::</h2>
+                        <div class="col-md-7">
+                            <div class="box box-default">
+                                <!-- /.box-header -->
+                                <div class="box-body">
+                                    <div class="alert alert-info alert-dismissible">
+                                        <h4><i class="icon fa fa-info"></i> Informacion!</h4>
+                                        Asignacion de permisos en primera instancia al perfil del usuario pero tambien se puede definir los permisos de un usuario en particular.
+                                    </div>
+                                    <div class="alert alert-info alert-dismissible">
+                                        <h4><i class="icon fa fa-info"></i> Paso 1!</h4>
+                                        Click sobre la opcion que desea modificar los permisos
+                                    </div>
+                                    <div class="alert alert-info alert-dismissible">
+                                        <h4><i class="icon fa fa-info"></i> Paso 2!</h4>
+                                       Adicionar perfil si asi se desea modificar los permisos y Guardar
+                                    </div>
+                                    <div class="alert alert-warning alert-dismissible">
+                                        <h4><i class="icon fa fa-warning"></i> Opcional!</h4>
+                                       Tambien se puede definir permisos por usuario al dar click sobre el icono <span class="fa fa-users"></span> de la lista
+                                    </div>
+                                </div>
+                                <!-- /.box-body -->
+                            </div>
+                            <!-- /.box -->
+                        </div>
+                    </div>
+                <div class="col-xs-8" ng-show="viewprofile===true">
+                    <div class="box box-warning">
+                        <div class="box-header">
+                            <h3 class="box-title">
+                                Configuración Accesos a Perfiles
+                            </h3>
+                            <br />
+                            <small>Acceso a ::{{item.Name}}-{{item.Page}}::</small>
+                            <h6>
+                                <b>Creado:</b> {{item.Creation}}::
+                            </h6>
+                            <h6>
+                                <b>Ultima Actualizacion:</b> {{item.Updated}}::
+                            </h6>
+                            <h6>
+                                Descripción:: {{item.Help}}::
+                            </h6>
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="form-group">
+                                        <label>Perfil</label>
+                                        <select class="form-control select2 custom-control" id="Profile" name="Parent" ng-model="Profile.Id" required>
+                                            <option value="">Seleccione uno</option>
+                                            <option ng-repeat="data in assignsProfile" value="{{data.Id}}">{{data.Name}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6 col-sm-offset-10">
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-warning" ng-click="AssingnProfile()">Asignar</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Perfil</th>
+                                        <th>Ver</th>
+                                        <th>Nuevo</th>
+                                        <th>Editar</th>
+                                        <th>Modificar</th>
+                                        <th>Estado</th>
+                                        <th>Eliminar</th>
+                                        <th>Otros</th>
+                                        <th>Usuarios</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-if="Usersitems.length===0">
+                                        <td colspan="20">No hay Registros</td>
+                                    </tr>
+                                    <tr ng-repeat="item in items">
+                                        <td>{{item.Profile.Name}}</td>
+                                        <td><input type="checkbox" class="minimal" name="IsView" ng-true-value="true" ng-false-value="false" ng-checked="item.IsView===true" ng-model="item.IsView"></td>
+                                        <td><input type="checkbox" class="minimal" name="IsNew" ng-true-value="true" ng-false-value="false" ng-checked="item.IsNew===true" ng-model="item.IsNew"></td>
+                                        <td><input type="checkbox" class="minimal" name="IsEdit" ng-true-value="true" ng-false-value="false" ng-checked="item.IsEdit===true" ng-model="item.IsEdit"></td>
+                                        <td><input type="checkbox" class="minimal" name="IsModify" ng-true-value="true" ng-false-value="false" ng-checked="item.IsModify===true" ng-model="item.IsModify"></td>
+                                        <td><input type="checkbox" class="minimal" name="IsStatus" ng-true-value="true" ng-false-value="false" ng-checked="item.IsStatus===true" ng-model="item.IsStatus"></td>
+                                        <td><input type="checkbox" class="minimal" name="IsDelete" ng-true-value="true" ng-false-value="false" ng-checked="item.IsDelete===true" ng-model="item.IsDelete"></td>
+                                        <td><input type="checkbox" class="minimal" name="IsSpecial" ng-true-value="true" ng-false-value="false" ng-checked="item.IsSpecial===true" ng-model="item.IsSpecial"></td>
+                                        <td><a href="#/Permissions/{{item.Id}}/{{item.Profile.Id}}" title="ver usuarios"><span class="fa fa-users"></span></a> </td>
+                                        <td><a ng-click="RemoveProfile(item.Id)" title="remover" href="" confirm-click="Seguro que desea eliminar este registro?"><span class="fa fa-remove"></span></a> </td>
+                                    </tr>
+                            </table>
+                        </div>
+                        <div class="box-body">
+                            <div class="row">
+                                <div class="col-xs-6 col-sm-offset-10">
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-success" ng-click="Save()">Guardar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-8" ng-show="viewusers===true">
+                    <div class="box box-warning">
+                        <div class="box-header">
+                            <h3 class="box-title">
+                                Configuración Accesos a Usuarios
+                            </h3>
+                            <br />
+                            <small>Acceso a ::{{item.Name}}-{{item.Pagge}}::<a href="#/Permissions/{{key}}/{{Id}}">Regresar</a></small>
+                            <h6>
+                                <b>Creado:</b> {{item.Creation}}::
+                            </h6>
+                            <h6>
+                                <b>Ultima Actualizacion:</b> {{item.Updated}}::
+                            </h6>
+                            <h6>
+                                Descripción:: {{item.Help}}::
+                            </h6>
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="form-group">
+                                        <label>Usuarios</label>
+                                        <select class="form-control select2" id="id_user" name="id_user" ng-model="Users.Id">
+                                            <option value="0" selected>Seleccione uno</option>
+                                            <option ng-repeat="data in assignsUsers" value="{{data.Id}}">{{data.UserName}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6 col-sm-offset-10">
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-warning" ng-click="AssingnUsers()">Asignar</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Usuario</th>
+                                        <th>Ver</th>
+                                        <th>Nuevo</th>
+                                        <th>Editar</th>
+                                        <th>Modificar</th>
+                                        <th>Estado</th>
+                                        <th>Eliminar</th>
+                                        <th>Otros</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-if="Usersitems.length===0">
+                                        <td colspan="20">No hay Registros</td>
+                                    </tr>
+                                    <tr ng-repeat="item in Usersitems">
+                                        <td>{{item.UserName}}</td>
+                                        <td><input type="checkbox" class="minimal" name="in_view" ng-true-value="true" ng-false-value="false" ng-checked="item.in_view===true" ng-model="item.in_view"></td>
+                                        <td><input type="checkbox" class="minimal" name="in_new" ng-true-value="true" ng-false-value="false" ng-checked="item.in_new===true" ng-model="item.in_new"></td>
+                                        <td><input type="checkbox" class="minimal" name="in_edit" ng-true-value="true" ng-false-value="false" ng-checked="item.in_edit===true" ng-model="item.in_edit"></td>
+                                        <td><input type="checkbox" class="minimal" name="in_modify" ng-true-value="true" ng-false-value="false" ng-checked="item.in_modify===true" ng-model="item.in_modify"></td>
+                                        <td><input type="checkbox" class="minimal" name="in_status" ng-true-value="true" ng-false-value="false" ng-checked="item.in_status===true" ng-model="item.in_status"></td>
+                                        <td><input type="checkbox" class="minimal" name="in_delete" ng-true-value="true" ng-false-value="false" ng-checked="item.in_delete===true" ng-model="item.in_delete"></td>
+                                        <td><input type="checkbox" class="minimal" name="in_special" ng-true-value="true" ng-false-value="false" ng-checked="item.in_special===true" ng-model="item.in_special"></td>
+                                        <td>
+                                            <a ng-click="RemoveUser(item.Id)" confirm-click="Seguro que desea eliminar este registro?" title="remover" href=""><span class="fa fa-remove"></span></a>
+                                        </td>
+                                    </tr>
+                            </table>
+                        </div>
+                        <div class="box-body" ng-show="Usersitems.length!=0">
+                            <div class="row">
+                                <div class="col-xs-6 col-sm-offset-10">
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-success" ng-click="SaveUsers()">Guardar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+    </div>
+</section>
+<!-- /.content -->

@@ -1,0 +1,58 @@
+﻿<section class="content-header">
+    <h1>
+        <small></small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#/Home"><i class="fa fa-dashboard"></i> Registro de Inventario</a></li>
+        <li class="active">{{pageCurrent}}</li>
+    </ol>
+</section>
+<section class="content">
+    <!-- TO DO List -->
+    <div class="box box-primary">
+        <div class="box-header">
+            <i class="ion ion-clipboard"></i>
+            <h3 class="box-title">Bicicletas Rentadas</h3>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+            <ul ng-if="items.length===0">
+                <li>No hay Registros</li>
+            </ul>
+            <div class="box-footer clearfix no-border">
+                <button type="button" class="btn btn-default pull-left" ng-click="NewOrEdit(0)"><i class="fa fa-plus"></i> Nueva Renta</button>
+                <button type="button" class="btn btn-default pull-right" ng-click="List()"><i class="fa fa-refresh"></i> Actualizar</button>
+            </div>
+            <ul class="todo-list">
+
+                <li ng-repeat="item in items">
+
+                    <!-- drag handle -->
+                    <span class="handle">
+                        <button type="submit" ng-click="NewOrEdit(item.Id)" class="text btn btn-info pull-right">Ver</button>
+                    </span>
+                    <div class="text">
+                        <!-- General tools such as edit or delete-->
+                        <button type="submit" ng-if="item.StatusRentar==0" ng-click="Ok(item.Id)" class="text btn btn-warning pull-right">Cerrar Renta</button>
+                        <button type="submit" ng-if="item.StatusRentar==1" ng-click="Closed(item.Id)" class="text btn btn-success pull-right">Liquidar</button>
+                        <button type="submit" ng-if="item.StatusRentar==0" ng-click="Delete(item.Id,false)" class="text btn btn-success pull-right">Quitar</button>
+                    </div>
+                    <div class="text">
+                        <div>{{item.FirstName}} {{item.LastName}} / {{item.Document}}</div>
+                        <div>$ Parcial {{item.PaymentPartial|number}} </div>
+                        <div ng-if="item.PaymentTotal!=0">$ Total {{item.PaymentTotal|number}} </div>
+                    </div>
+                    <div ng-repeat="k in item.ItemRentar">
+                        <div class="text">::Cantidad::{{item.Quality}}::/::Codigo::<span class="text">{{k.Code}}::/::Nombre::{{k.Name}}::</span></div>
+                        <div class="text text-danger"><i class="fa fa-clock-o"></i> {{k.Time}} mins</div>
+                        <div class="text text-success" ng-if="k.TimeTotal!=0"><i class="fa fa-clock-o"></i> {{k.TimeTotal}} mins</div>
+                        <div class="text text-error" ng-if="item.StatusRentar==3"><i class="fa fa-remove"></i>Eliminado</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- /.box-body -->
+    </div>
+    <!-- /.box -->
+</section>
+<!-- /.content -->
